@@ -1,0 +1,54 @@
+*
+  box-sizing: border-box
+
+@font-face
+  font-family: 'Sunday Best'
+  src: url('./assets/fonts/sunday_best.woff2')
+  font-weight: 400
+  font-style: normal
+
+:root
+  --Accent1: #FDA3C4
+  --Accent2: #F40000
+  --White: #fff
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, em, img, strong,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output,section
+  margin: 0
+  padding: 0
+  border: 0
+  font-size: 100%
+  font: inherit
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section
+  display: block
+
+body
+  line-height: 1
+
+ol, ul
+  list-style: none
+
+table
+  border-collapse: collapse
+  border-spacing: 0
+
+.wrapper
+  max-width: 1141px
+  box-sizing: content-box
+  margin: 0 auto
+  padding: 0 20px
+  @media (max-width: 1000px)
+    max-width: 100%
+    padding: 0 50px
+  @media (max-width: 768px)
+    padding: 0 15px
