@@ -4,7 +4,7 @@ import styles from "./cardProduct.module.sass";
 
 const CardProduct = ({ id, price, name, img }) => {
   return (
-    <div className={styles.cardProduct} key={id}>
+    <div className={styles.cardProduct}>
       <div className={styles.favoriteSvg}>
         <FavoriteSvg />
       </div>
@@ -14,7 +14,6 @@ const CardProduct = ({ id, price, name, img }) => {
           <div className={styles.cardProduct_line}></div>
         </center>
       </div>
-
       <div className={styles.cardProduct__title}>
         <p className={styles.cardProduct__title_name}>{name} </p>
         <p className={styles.cardProduct__title_price}>{price}₽</p>
