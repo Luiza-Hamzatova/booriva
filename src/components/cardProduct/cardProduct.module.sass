@@ -28,7 +28,6 @@
         display: flex
         justify-content: space-between
         align-items: center
-        font-family: 'Montserrat'
         margin: 10px 20px
         @media (max-width: 1000px)
             margin: 5px 10px
@@ -44,6 +43,7 @@
                 font-size: 12px
             @media (max-width: 320px)
                 font-size: 10px
+                max-width: 70%
 
         &_price
             color: rgba(253, 163, 196, 1)
@@ -54,7 +54,7 @@
             @media (max-width: 480px)
                 font-size: 14px
             @media (max-width: 320px)
-                font-size: 12px
+                font-size: 10px
 
 .favoriteSvg
     position: absolute
@@ -69,4 +69,4 @@
     @media (max-width: 320px)
         width: 14px
     &:hover svg, &_active
-        fill: #F40000
+        fill: var(--Accent2)

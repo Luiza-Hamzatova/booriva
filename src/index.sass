@@ -36,8 +36,13 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section
   display: block
 
+h1
+  font-family: 'Sunday Best'
+  font-weight: 400
+
 body
   line-height: 1
+  font-family: 'Montserrat'
 
 ol, ul
   list-style: none
@@ -56,3 +61,63 @@ table
     padding: 0 50px
   @media (max-width: 768px)
     padding: 0 15px
+
+.basket
+  max-width: 1120px
+  display: flex
+  height: 370px
+  @media (max-width: 1000px)
+    max-width: 90%
+    padding: 0 50px
+  &_title
+
+    h1
+      font-size: 54px
+      font-weight: 400
+      margin-bottom: 15px
+  &_text
+    h2
+      font-size: 42px
+      font-weight: 600
+      color: var(--Accent2)
+    p
+      margin-top: 10px
+      margin-left: 109px
+
+  .flex
+    display: flex
+    gap: 6px
+    &L
+      align-items: flex-end
+  &Center_img
+
+    margin-right: 6px
+    & img
+      max-width: 370px
+      object-fit: cover
+      @media (max-width: 1140px)
+        max-width: 272px
+        height: 263px
+  &Left
+    flex-direction: column
+    display: flex
+    justify-content: space-between
+  &Right
+    flex-direction: column
+    display: flex
+    justify-content: space-between
+  &Small_img
+    max-width: 168px
+    height: 168px
+    object-fit: cover
+    @media (max-width: 1140px)
+      max-width: 124px
+      height: 124px
+
+  &Big_img
+    max-width: 205px
+    height: 205px
+    object-fit: cover
+    @media (max-width: 1140px)
+      max-width: 151px
+      height: 151px
