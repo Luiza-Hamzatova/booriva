@@ -1,8 +1,8 @@
 .title
-  color: red
-  font-family: Sunday Best
-  font-size: 12px
-  font-weight: 400
+  color: var(--red)
+  font-family: var(--secondary-ff)
+  font-size: 10px
+  font-weight: var(--regular-fw)
   letter-spacing: 1px
   margin-bottom: 15px
   @media (min-width: 768px)
@@ -13,10 +13,6 @@
     display: none
 
 .list
-  font-family: Montserrat
-  font-size: 12px
-  font-weight: 400
-  color: #FFFFFF
   display: flex
   flex-direction: column
   gap: 10px
@@ -41,9 +37,6 @@ span
     display: block
 
 .link
-  font-family: Montserrat
-  font-size: 12px
-  font-weight: 400
-  color: #FFFFFF
+  transition: all 0.3s ease
   &:hover
-    color: red
+    color: var(--red)
