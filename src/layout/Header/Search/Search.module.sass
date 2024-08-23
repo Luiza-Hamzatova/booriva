@@ -1,0 +1,45 @@
+.search
+  cursor: pointer
+  &:hover
+    svg
+      fill: #FDA3C4
+    span
+      color: #FDA3C4
+  @media (min-width: 768px)
+    display: flex
+    align-items: center
+    gap: 10px
+  @media (min-width: 1000px)
+    gap: 8px
+  @media (min-width: 1440px)
+    gap: 16px
+  svg
+    width: 16px
+    height: 16px
+    color: #0000
+    transition: all 0.3s ease
+    @media (min-width: 480px)
+      width: 24px
+      height: 24px
+    @media (min-width: 768px)
+      width: 20px
+      height: 20px
+    @media (min-width: 1440px)
+      width: 24px
+      height: 24px
+  span
+    display: none
+    @media (min-width: 768px)
+      display: block
+      font-size: 11px
+      font-weight: bold-fw
+      transition: all 0.3s ease
+    @media (min-width: 1440px)
+      font-size: 12px
+
+.active
+  color:#FDA3C4
+  font-style: italic
+
+.active svg
+  fill: #FDA3C4
