@@ -8,6 +8,7 @@ import Contact from "./layout/Contact/contact";
 import NewColection from "./layout/NewColection/newColection";
 import NewCatalog from "./layout/NewCatalog/newCatalog";
 import Baner from './layout/Baner'
+import BoorivaStore from "./components/boorivaStore/boorivaStore";
 const App = () => {
   return (
     <div>
@@ -17,6 +18,7 @@ const App = () => {
       <NewColection/> 
       <NewCatalog/>
       <Baner/>
+      <BoorivaStore/>
       <InfiniteMarquee/>
       <Contact/>
       <Footer />
