@@ -29,7 +29,27 @@ ul, li
 :root
   --Accent1: #FDA3C4
   --Accent2: #F40000
-  --White: #fff
+  --White: #FFFFFF
+  // COLORS
+  --taffy-pink: #FDA3C4
+  --big-pink: #FFD4E4
+  --red: #F40000
+  --umbra: #1F1F1F
+  --sweetly: #FFE6EF
+  --white: #FFFFFF
+  --grey: #909090
+  --black: #000
+  --lightpink: rgba(253, 163, 196, 0.8)
+  --lightblack: rgba(0, 0, 0, 0.77)
+
+  // TYPOGRAPHY
+  --primary-ff: 'Montserrat', sans-serif
+  --secondary-ff: "Sunday Best", sans-serif
+  --light-fw: 300
+  --regular-fw: 400
+  --medium-fw: 500
+  --semibold-fw: 600
+  --bold-fw: 700
 
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, address, em, img, strong,
@@ -57,6 +77,7 @@ h1
 
 body
   line-height: 1
+  font-family: 'Montserrat'
 
 ol, ul
   list-style: none
@@ -75,3 +96,167 @@ table
     padding: 0 50px
   @media (max-width: 768px)
     padding: 0 15px
+
+.contact
+  max-width: 1141px
+  display: flex
+  height: 370px
+  margin: 0 auto
+  margin-top: 25px
+  margin-bottom: 75px
+  @media (max-width: 1000px)
+    max-width: 90%
+    padding: 0 50px
+  &_title
+
+    h1
+      font-size: 54px
+      font-weight: 400
+      margin-bottom: 15px
+  &_text
+    h2
+      font-size: 42px
+      font-weight: 600
+      color: var(--Accent2)
+    p
+      margin-top: 10px
+      margin-left: 109px
+
+  .flex
+    display: flex
+    gap: 6px
+    &L
+      align-items: flex-end
+  &Center_img
+
+    margin-right: 6px
+    & img
+      max-width: 370px
+      object-fit: cover
+      @media (max-width: 1140px)
+        max-width: 272px
+        height: 263px
+  &Left
+    flex-direction: column
+    display: flex
+    justify-content: space-between
+  &Right
+    flex-direction: column
+    display: flex
+    justify-content: space-between
+  &Small_img
+    max-width: 168px
+    height: 168px
+    object-fit: cover
+    @media (max-width: 1140px)
+      max-width: 124px
+      height: 124px
+
+  &Big_img
+    max-width: 205px
+    height: 205px
+    object-fit: cover
+    @media (max-width: 1140px)
+      max-width: 151px
+      height: 151px
+
+.baner
+  max-width: 1440px
+  object-fit: cover
+  margin: 0 auto
+  height: 512px
+
+  @media (max-width: 1140px)
+
+.newColection
+  margin-top: 135px
+  display: flex
+  gap: 15px
+  &Down, &Up
+    display: flex
+    flex-direction: column
+    gap: 15px
+  &_flex
+    display: flex
+    gap: 15px
+
+  &__tshirts
+    position: relative
+    & img
+      width: 563px
+      height: 345px
+      object-fit: cover
+    &_button
+      position: absolute
+      left: 7%
+      bottom: 7%
+  &__dresses
+    position: relative
+    & img
+      width: 274px
+      height: 296px
+      object-fit: cover
+    &_button
+      position: absolute
+      bottom: 20%
+      left: 8%
+
+  &__suits
+    position: relative
+    & img
+      width: 274px
+      height: 296px
+      object-fit: cover
+    &_button
+      position: absolute
+      bottom: 14%
+      right: 8%
+
+  &__downclothes
+    position: relative
+    & img
+      width: 274px
+      height: 296px
+      object-fit: cover
+    &_button
+      position: absolute
+      width: 106px
+      height: 60px
+      top: 60%
+      right: 5%
+      transform: rotate(-50.81deg)
+
+  &__upclothes
+    position: relative
+    & img
+      width: 274px
+      height: 296px
+      object-fit: cover
+    &_button
+      position: absolute
+      top: 7%
+      right: 10%
+
+  &__hoodies
+    position: relative
+    & img
+      width: 563px
+      height: 345px
+      object-fit: cover
+    &_button
+      position: absolute
+      transform: rotate(37.04deg)
+      bottom: 14%
+      left: 8%
+
+.newCatalog
+  margin: 0 auto
+  margin-top: 50px
+  max-width: 1440px
+  margin-bottom: 50px
+  &_products
+    margin-top: 21px
+  &_button
+    display: inline-block
+    margin: 0 auto
+    margin-top: 25px

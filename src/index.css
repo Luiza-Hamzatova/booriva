@@ -1,0 +1,328 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+@font-face {
+  font-family: "Montserrat";
+  src: url("./assets/fonts/montserrat.ttf");
+}
+@font-face {
+  font-family: "Sunday Best";
+  src: url("./assets/fonts/sunday_best.woff2");
+  font-weight: 400;
+  font-style: normal;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul, li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+}
+
+::-moz-selection {
+  background-color: var(--taffy-pink);
+  color: var(--white);
+}
+
+::selection {
+  background-color: var(--taffy-pink);
+  color: var(--white);
+}
+
+:root {
+  --Accent1: #FDA3C4;
+  --Accent2: #F40000;
+  --White: #FFFFFF;
+  --taffy-pink: #FDA3C4;
+  --big-pink: #FFD4E4;
+  --red: #F40000;
+  --umbra: #1F1F1F;
+  --sweetly: #FFE6EF;
+  --white: #FFFFFF;
+  --grey: #909090;
+  --black: #000;
+  --lightpink: rgba(253, 163, 196, 0.8);
+  --lightblack: rgba(0, 0, 0, 0.77);
+  --primary-ff: "Montserrat", sans-serif;
+  --secondary-ff: "Sunday Best", sans-serif;
+  --light-fw: 300;
+  --regular-fw: 400;
+  --medium-fw: 500;
+  --semibold-fw: 600;
+  --bold-fw: 700;
+}
+
+body, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, address, em, img, strong,
+b, u, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header,
+menu, nav, output, section {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+h1 {
+  font-family: "Sunday Best";
+  font-weight: 400;
+}
+
+body {
+  line-height: 1;
+  font-family: "Montserrat";
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+.wrapper {
+  max-width: 1141px;
+  box-sizing: content-box;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+@media (max-width: 1000px) {
+  .wrapper {
+    max-width: 100%;
+    padding: 0 50px;
+  }
+}
+@media (max-width: 768px) {
+  .wrapper {
+    padding: 0 15px;
+  }
+}
+
+.contact {
+  max-width: 1141px;
+  display: flex;
+  height: 370px;
+  margin: 0 auto;
+  margin-top: 25px;
+  margin-bottom: 75px;
+}
+@media (max-width: 1000px) {
+  .contact {
+    max-width: 90%;
+    padding: 0 50px;
+  }
+}
+.contact_title h1 {
+  font-size: 54px;
+  font-weight: 400;
+  margin-bottom: 15px;
+}
+.contact_text h2 {
+  font-size: 42px;
+  font-weight: 600;
+  color: var(--Accent2);
+}
+.contact_text p {
+  margin-top: 10px;
+  margin-left: 109px;
+}
+.contact .flex {
+  display: flex;
+  gap: 6px;
+}
+.contact .flexL {
+  align-items: flex-end;
+}
+.contactCenter_img {
+  margin-right: 6px;
+}
+.contactCenter_img img {
+  max-width: 370px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1140px) {
+  .contactCenter_img img {
+    max-width: 272px;
+    height: 263px;
+  }
+}
+.contactLeft {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+.contactRight {
+  flex-direction: column;
+  display: flex;
+  justify-content: space-between;
+}
+.contactSmall_img {
+  max-width: 168px;
+  height: 168px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1140px) {
+  .contactSmall_img {
+    max-width: 124px;
+    height: 124px;
+  }
+}
+.contactBig_img {
+  max-width: 205px;
+  height: 205px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+@media (max-width: 1140px) {
+  .contactBig_img {
+    max-width: 151px;
+    height: 151px;
+  }
+}
+
+.baner {
+  max-width: 1440px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin: 0 auto;
+  height: 512px;
+}
+.newColection {
+  margin-top: 135px;
+  display: flex;
+  gap: 15px;
+}
+.newColectionDown, .newColectionUp {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+.newColection_flex {
+  display: flex;
+  gap: 15px;
+}
+.newColection__tshirts {
+  position: relative;
+}
+.newColection__tshirts img {
+  width: 563px;
+  height: 345px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.newColection__tshirts_button {
+  position: absolute;
+  left: 7%;
+  bottom: 7%;
+}
+.newColection__dresses {
+  position: relative;
+}
+.newColection__dresses img {
+  width: 274px;
+  height: 296px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.newColection__dresses_button {
+  position: absolute;
+  bottom: 20%;
+  left: 8%;
+}
+.newColection__suits {
+  position: relative;
+}
+.newColection__suits img {
+  width: 274px;
+  height: 296px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.newColection__suits_button {
+  position: absolute;
+  bottom: 14%;
+  right: 8%;
+}
+.newColection__downclothes {
+  position: relative;
+}
+.newColection__downclothes img {
+  width: 274px;
+  height: 296px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.newColection__downclothes_button {
+  position: absolute;
+  width: 106px;
+  height: 60px;
+  top: 60%;
+  right: 5%;
+  transform: rotate(-50.81deg);
+}
+.newColection__upclothes {
+  position: relative;
+}
+.newColection__upclothes img {
+  width: 274px;
+  height: 296px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.newColection__upclothes_button {
+  position: absolute;
+  top: 7%;
+  right: 10%;
+}
+.newColection__hoodies {
+  position: relative;
+}
+.newColection__hoodies img {
+  width: 563px;
+  height: 345px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.newColection__hoodies_button {
+  position: absolute;
+  transform: rotate(37.04deg);
+  bottom: 14%;
+  left: 8%;
+}
+
+.newCatalog {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 1440px;
+  margin-bottom: 50px;
+}
+.newCatalog_products {
+  margin-top: 21px;
+}
+.newCatalog_button {
+  display: inline-block;
+  margin: 0 auto;
+  margin-top: 25px;
+}/*# sourceMappingURL=index.css.map */

@@ -1,14 +1,16 @@
-import ButtonSvg from './../../assets/svg/buttonSvg'
+import ButtonSvg from "./../../assets/svg/buttonSvg";
 
-import styles from './button.module.sass'
+import styles from "./button.module.sass";
 
-
-const Button = ({value}) => {
-    return <div className={styles.button}>
-        <div className={styles.bg}><ButtonSvg/></div>
-        <div className={styles.text}>{value}</div>
+const Button = ({ value }) => {
+  return (
+    <div className={styles.button}>
+      <div className={styles.bg}>
+        <ButtonSvg />
+      </div>
+      <div className={styles.text}>{value}</div>
     </div>
-    
-}
+  );
+};
 
-export default Button
+export default Button;

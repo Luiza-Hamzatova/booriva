@@ -2,7 +2,7 @@ import FavoriteSvg from "./../../assets/svg/favoriteSvg";
 
 import styles from "./cardProduct.module.sass";
 
-const CardProduct = ({ id, price, name, img }) => {
+const CardProduct = ({ id, price, name, img, isFavorite }) => {
   return (
     <div className={styles.cardProduct}>
       <div className={styles.favoriteSvg}>

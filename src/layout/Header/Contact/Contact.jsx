@@ -12,7 +12,7 @@ const Contact = () => {
         className={styles.address + " " + styles.hidden}
       >
         <Location />
-        Киев, ул. Нижний, 37
+        Грозный, ул. Нижний, 37
       </a>
       <a href="/" className={styles.phoneNumber}>
         <Phone />

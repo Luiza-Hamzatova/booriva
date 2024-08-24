@@ -1,0 +1,33 @@
+.socials {
+  display: none;
+}
+@media (min-width: 1000px) {
+  .socials {
+    display: block;
+  }
+}
+
+.title {
+  color: red;
+  font-family: Sunday Best;
+  font-size: 12px;
+  font-weight: 400;
+  margin-bottom: 20px;
+}
+
+.links {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.link svg {
+  width: 20px;
+  height: 20px;
+  padding: 0px 0.45px 0px 0.45px;
+  fill: #FFD4E4;
+  transition: all 0.3s ease;
+}
+.link svg:hover {
+  fill: red;
+}/*# sourceMappingURL=Socials.module.css.map */
