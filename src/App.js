@@ -1,4 +1,3 @@
-
 import Footer from "./layout/Footer/Footer";
 import Header from "./layout/Header/Header";
 import InfiniteMarquee from "./layout/InfiniteMarquee/InfiniteMarquee";
@@ -7,8 +6,6 @@ import Contact from "./layout/Contact/contact";
 import NewColection from "./layout/NewColection/newColection";
 import NewCatalog from "./layout/NewCatalog/newCatalog";
 import Baner from './layout/Baner'
-import CatalogPage from "./pages/catalogPage";
-
 const App = () => {
   return (
     <div>
@@ -26,6 +23,3 @@ const App = () => {
 };
 
 export default App;
-
-
-

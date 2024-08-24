@@ -161,12 +161,19 @@ table
       height: 151px
 
 .baner
-  max-width: 1440px
-  object-fit: cover
-  margin: 0 auto
-  height: 512px
-
-  @media (max-width: 1140px)
+  background-color: lightgray
+  height: 115px
+  overflow: hidden
+  & img
+    width: 100%
+  @media (min-width: 480px)
+    height: 170px
+  @media (min-width: 768px)
+    height: 275px
+  @media (min-width: 1000px)
+    height: 355px
+  @media (min-width: 1440px)
+    height: 515px
 
 .newColection
   margin-top: 135px
@@ -276,3 +283,30 @@ table
 
     display: flex
     justify-content: space-between
+
+.catalog
+  margin-top: 130px
+  &Up
+    display: flex
+    align-items: end
+    justify-content: space-between
+    &_img
+      width: 919px
+      height: 200px
+      object-fit: cover
+  &Down
+    margin-top: 60px
+
+    display: flex
+    justify-content: space-between
+
+::-webkit-scrollbar
+  width: 8px
+  background-color: transparent
+
+::-webkit-scrollbar-track
+  background-color: #ffffff
+
+::-webkit-scrollbar-thumb
+  background-color: #FDA3C4
+  border-radius: 10px
