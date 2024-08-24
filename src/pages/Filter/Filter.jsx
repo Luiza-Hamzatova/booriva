@@ -2,7 +2,7 @@ import styles from "./Filter.module.sass";
 
 const Filter = () => {
   return (
-    <div className={styles.catalog}>
+    <div className={styles.category}>
       <div className={styles.filter}>
         <div className={styles.column}>
           <div className={styles.title}>КАТЕГОРИИ:</div>

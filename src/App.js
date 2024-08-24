@@ -7,18 +7,20 @@ import Contact from "./layout/Contact/contact";
 import NewColection from "./layout/NewColection/newColection";
 import NewCatalog from "./layout/NewCatalog/newCatalog";
 import Baner from './layout/Baner'
+import CatalogPage from "./pages/catalogPage";
+
 const App = () => {
   return (
     <div>
      
-       <Header /> 
-       <Filter/>
+      {/* <Header /> 
       <NewColection/> 
       <NewCatalog/>
       <Baner/>
       <InfiniteMarquee/>
       <Contact/>
-      <Footer />
+      <Footer /> */}
+      <CatalogPage/>
     </div>
   );
 };
