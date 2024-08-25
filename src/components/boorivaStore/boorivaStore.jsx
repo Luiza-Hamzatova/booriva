@@ -18,7 +18,7 @@ const BoorivaStore = () => {
       </h1>
       <div className={styles.info}>
         <p>
-          г.Киев, <br /> ул. Нижний Вал, 37
+          г.Грозный, <br /> ул. Нижний Вал, 37
         </p>
         <br />
         <p>
