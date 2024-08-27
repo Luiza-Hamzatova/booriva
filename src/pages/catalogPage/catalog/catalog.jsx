@@ -1,8 +1,10 @@
-import CardProduct from "../../components/cardProduct/cardProduct";
-import Title from "../../components/title/title";
+import { useState } from "react";
+import CardProduct from "../../../components/cardProduct/cardProduct";
+import Title from "../../../components/title/title";
 
-import Filter from "../../pages/Filter/Filter";
+import Filter from "../filter/filter";
 const Catalog = () => {
+  const [products, setProducts] = useState([{img: "./img/productImg.png", id: 0, price: 1099. }])
   return (
     <div className="wrapper">
       <div className="catalog">
@@ -23,7 +25,7 @@ const Catalog = () => {
               price={"1 099"}
               name={"Cвитшот вставка клетка"}
               isFavorite={false}
-              class={"catalog"}
+              type={"catalog"}
             />
             <CardProduct
               img={"./img/productImg.png"}
@@ -31,7 +33,7 @@ const Catalog = () => {
               price={"1 099"}
               name={"Cвитшот вставка клетка"}
               isFavorite={false}
-              class={"catalog"}
+              type={"catalog"}
             />
             <CardProduct
               img={"./img/productImg.png"}
@@ -39,7 +41,7 @@ const Catalog = () => {
               price={"1 099"}
               name={"Cвитшот вставка клетка"}
               isFavorite={false}
-              class={"catalog"}
+              type={"catalog"}
             />
             <CardProduct
               img={"./img/productImg.png"}
@@ -47,7 +49,7 @@ const Catalog = () => {
               price={"1 099"}
               name={"Cвитшот вставка клетка"}
               isFavorite={false}
-              class={"catalog"}
+              type={"catalog"}
             />
             <CardProduct
               img={"./img/productImg.png"}
@@ -55,7 +57,7 @@ const Catalog = () => {
               price={"1 099"}
               name={"Cвитшот вставка клетка"}
               isFavorite={false}
-              class={"catalog"}
+              type={"catalog"}
             />
             <CardProduct
               img={"./img/productImg.png"}
@@ -63,7 +65,7 @@ const Catalog = () => {
               price={"1 099"}
               name={"Cвитшот вставка клетка"}
               isFavorite={false}
-              class={"catalog"}
+              type={"catalog"}
             />
           </div>
         </div>

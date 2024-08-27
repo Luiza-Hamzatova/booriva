@@ -1,8 +1,8 @@
-import styles from "./Filter.module.sass";
+import styles from "./filter.module.sass";
 
 const Filter = () => {
   return (
-    <div className={styles.category}>
+    <div className={styles}>
       <div className={styles.filter}>
         <div className={styles.column}>
           <div className={styles.title}>КАТЕГОРИИ:</div>

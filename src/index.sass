@@ -2,7 +2,6 @@
   box-sizing: border-box
   margin: 0
   padding: 0
-  box-sizing: border-box
 
 @font-face
   font-family: 'Montserrat'
@@ -262,6 +261,7 @@ table
   max-width: 1440px
   margin-bottom: 50px
   &_products
+    display: flex
     margin-top: 21px
   &_button
     display: inline-block
@@ -270,6 +270,11 @@ table
 
 .catalog
   margin-top: 130px
+  &_products
+    width: 949px
+    display: flex
+    flex-wrap: wrap
+    gap: 16px
   &Up
     display: flex
     align-items: end
@@ -280,7 +285,6 @@ table
       object-fit: cover
   &Down
     margin-top: 60px
-
     display: flex
     justify-content: space-between
 

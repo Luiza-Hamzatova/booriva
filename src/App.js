@@ -1,25 +1,20 @@
+import { Route, Routes } from "react-router-dom";
 import Footer from "./layout/Footer/Footer";
 import Header from "./layout/Header/Header";
-import InfiniteMarquee from "./layout/InfiniteMarquee/InfiniteMarquee";
-import Filter from "./pages/Filter/Filter";
-import Contact from "./layout/Contact/contact";
-import NewColection from "./layout/NewColection/newColection";
-import NewCatalog from "./layout/NewCatalog/newCatalog";
-import Baner from './layout/Baner'
+
 import CatalogPage from "./pages/catalogPage";
-import BoorivaStore from "./components/boorivaStore/boorivaStore";
+import HomePage from "./pages/homePage";
+
 const App = () => {
   return (
     <div>
-      {/* <Header /> 
-      <NewColection/> 
-      <NewCatalog/>
-      <Baner/>
-      <BoorivaStore/>
-      <InfiniteMarquee/>
-      <Contact/>
-      <Footer /> */}
-      <CatalogPage/> 
+      <Header />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+      </Routes>
+
+      <Footer />
     </div>
   );
 };
