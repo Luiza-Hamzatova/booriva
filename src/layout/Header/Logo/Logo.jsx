@@ -1,12 +1,13 @@
+import { Link } from "react-router-dom";
 import LogoIcon from "../../../assets/svg/Logo";
 
 import styles from "./Logo.module.sass";
 
 const Logo = () => {
   return (
-    <a href="/" className={styles.logo}>
+    <Link to="/" className={styles.logo}>
       <LogoIcon />
-    </a>
+    </Link>
   );
 };
 export default Logo;

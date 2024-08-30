@@ -1,46 +1,47 @@
+import { Link } from "react-router-dom";
 import styles from "./Menu.module.sass";
 
 const Menu = () => {
   return (
     <ul className={styles.menu}>
       <li>
-        <a href="/" className={styles.link}>
+        <Link to="/catalog" className={styles.link}>
           Новинки
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/" className={styles.link}>
+        <Link to="/catalog" className={styles.link}>
           Платья
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/" className={styles.link}>
+        <Link to="/catalog" className={styles.link}>
           Вверх
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/" className={styles.link}>
+        <Link to="/catalog" className={styles.link}>
           Юбки
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/" className={styles.link}>
+        <Link to="/catalog" className={styles.link}>
           Верхняя одежда
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/" className={styles.link}>
+        <Link to="/catalog" className={styles.link}>
           Мелочи
-        </a>
+        </Link>
       </li>
       <li>
-        <a href="/" className={styles.link}>
+        <Link to="/catalog" className={styles.link}>
           Костюмы
-        </a>
+        </Link>
       </li>
       <li>
         <a href="/" className={styles.link}>
-          #BOORIVAIRLS
+          #BOORIVAGIRLS
         </a>
       </li>
     </ul>
