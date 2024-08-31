@@ -4,16 +4,20 @@ import NewColection from "./NewColection/newColection";
 import NewCatalog from "./../../layout/NewCatalog/newCatalog";
 import Baner from "./../../layout/Baner";
 import BoorivaStore from "./../../components/boorivaStore/boorivaStore";
+import Delivery from "../../components/delivery/delivery";
 
 const HomePage = () => {
-    return <div>
-        <NewColection />
-        <NewCatalog />
-        <Baner />
-        <BoorivaStore />
-        <InfiniteMarquee />
-        <Contact/>
+  return (
+    <div>
+      <NewColection />
+      <NewCatalog />
+      <Baner />
+      <BoorivaStore />
+      <InfiniteMarquee />
+      <Delivery />
+      <Contact />
     </div>
-}
+  );
+};
 
 export default HomePage;

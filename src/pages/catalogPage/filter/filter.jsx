@@ -2,7 +2,7 @@ import styles from "./filter.module.sass";
 
 const Filter = () => {
   return (
-    <div className={styles}>
+    
       <div className={styles.filter}>
         <div className={styles.column}>
           <div className={styles.title}>КАТЕГОРИИ:</div>
@@ -56,7 +56,7 @@ const Filter = () => {
           </form>
         </div>
       </div>
-    </div>
+  
   );
 };
 
