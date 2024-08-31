@@ -1,50 +1,33 @@
 import { Link } from "react-router-dom";
 import styles from "./Menu.module.sass";
+import { useEffect, useState } from "react";
 
 const Menu = () => {
-  
+  const [menu, setMenu] = useState([]);
+
+  useEffect(() => {
+    fetch("https://640ef1d54ed25579dc40e2a6.mockapi.io/menu")
+      .then((res) => res.json())
+      .then((res) => {
+        setMenu(res);
+      });
+  }, []);
+
   return (
     <ul className={styles.menu}>
       <li>
-        <Link to="/catalog" className={styles.link}>
-          Новинки
+        <Link to="/" className={styles.link}>
+          {" "}
+          Главная
         </Link>
       </li>
-      <li>
-        <Link to="/catalog" className={styles.link}>
-          Платья
-        </Link>
-      </li>
-      <li>
-        <Link to="/catalog" className={styles.link}>
-          Вверх
-        </Link>
-      </li>
-      <li>
-        <Link to="/catalog" className={styles.link}>
-          Юбки
-        </Link>
-      </li>
-      <li>
-        <Link to="/catalog" className={styles.link}>
-          Верхняя одежда
-        </Link>
-      </li>
-      <li>
-        <Link to="/catalog" className={styles.link}>
-          Мелочи
-        </Link>
-      </li>
-      <li>
-        <Link to="/catalog" className={styles.link}>
-          Костюмы
-        </Link>
-      </li>
-      <li>
-        <a href="/" className={styles.link}>
-          #BOORIVAGIRLS
-        </a>
-      </li>
+      {menu.map(({ id, name }) => (
+        <li key={id}>
+          <Link to={`/catalog?menuId=${id}`} className={styles.link}>
+            {name}
+          </Link>
+        </li>
+      ))}
     </ul>
   );
 };
