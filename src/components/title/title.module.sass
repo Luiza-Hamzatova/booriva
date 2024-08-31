@@ -1,10 +1,20 @@
 .title
     display: inline-block
+    img
+        @media (max-width: 480px)
+            width: 37px
+        @media (max-width: 320px)
+            width: 24px
     &h1
         font-family: Sunday Best
         font-size: 54px
         position: relative
         color: var(--Accent1)
+        @media (max-width: 480px)
+            font-size: 36px
+        @media (max-width: 320px)
+            font-size: 26px
+
     &h2
         font-size: 25px
         font-weight: 600
@@ -12,3 +22,7 @@
         display: flex
         position: absolute
         text-transform: uppercase
+        @media (max-width: 480px)
+            font-size: 16px
+        @media (max-width: 320px)
+            font-size: 14px

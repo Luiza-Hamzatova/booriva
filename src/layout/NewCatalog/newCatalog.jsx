@@ -5,7 +5,7 @@ const NewCatalog = () => {
   return (
     <div>
       <div className="newCatalog">
-        <div className="wpapper">
+        <div className="newCatalog__title wrapper">
           <Title valueh1="новинки" valueh2="новинки" />
         </div>
         <div className="newCatalog_products">
@@ -14,6 +14,7 @@ const NewCatalog = () => {
             id={0}
             price={"1 099"}
             name={"Cвитшот вставка клетка"}
+            class={"catalog"}
             isFavorite={false}
           />
           <CardProduct
@@ -21,6 +22,7 @@ const NewCatalog = () => {
             id={0}
             price={"1 099"}
             name={"Cвитшот вставка клетка"}
+            class={"catalog"}
             isFavorite={false}
           />
           <CardProduct
@@ -28,6 +30,7 @@ const NewCatalog = () => {
             id={0}
             price={"1 099"}
             name={"Cвитшот вставка клетка"}
+            class={"catalog"}
             isFavorite={false}
           />
           <CardProduct
@@ -35,10 +38,11 @@ const NewCatalog = () => {
             id={0}
             price={"1 099"}
             name={"Cвитшот вставка клетка"}
+            class={"catalog"}
             isFavorite={false}
           />
         </div>
-        <div className="newCatalog_button">
+        <div className="newCatalog_button ">
           <Button value={"смотреть все"} />
         </div>
       </div>

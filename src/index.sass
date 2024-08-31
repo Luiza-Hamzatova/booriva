@@ -156,9 +156,13 @@ table
     display: flex
     flex-direction: column
     gap: 15px
+    @media (max-width: 1210px)
+      gap: 10px
   &_flex
     display: flex
     gap: 15px
+    @media (max-width: 1210px)
+      gap: 10px
 
   &__tshirts
     position: relative
@@ -166,31 +170,18 @@ table
       width: 563px
       height: 345px
       object-fit: cover
+      @media (max-width: 1210px)
+        width: 445px
+        height: 272px
+      @media (max-width: 980px)
+        width: 100%
+        height: 180px
+      @media (max-width: 480px)
+        height: 170px
     &_button
       position: absolute
       left: 7%
       bottom: 7%
-  &__dresses
-    position: relative
-    & img
-      width: 274px
-      height: 296px
-      object-fit: cover
-    &_button
-      position: absolute
-      bottom: 20%
-      left: 8%
-
-  &__suits
-    position: relative
-    & img
-      width: 274px
-      height: 296px
-      object-fit: cover
-    &_button
-      position: absolute
-      bottom: 14%
-      right: 8%
 
   &__downclothes
     position: relative
@@ -198,10 +189,15 @@ table
       width: 274px
       height: 296px
       object-fit: cover
+      @media (max-width: 1210px)
+        width: 216px
+        height: 234px
+      @media (max-width: 980px)
+        width: 100%
+        height: 155px
     &_button
       position: absolute
       width: 106px
-      height: 60px
       top: 60%
       right: 5%
       transform: rotate(-50.81deg)
@@ -212,10 +208,50 @@ table
       width: 274px
       height: 296px
       object-fit: cover
+      @media (max-width: 1210px)
+        width: 216px
+        height: 234px
+      @media (max-width: 980px)
+        width: 100%
+        height: 155px
     &_button
       position: absolute
       top: 7%
       right: 10%
+  &__dresses
+    position: relative
+    & img
+      width: 274px
+      height: 296px
+      object-fit: cover
+      @media (max-width: 1210px)
+        width: 216px
+        height: 234px
+      @media (max-width: 980px)
+        width: 100%
+        height: 155px
+    &_button
+      width: 50px
+      position: absolute
+      bottom: 20%
+      left: 8%
+
+  &__suits
+    position: relative
+    & img
+      width: 274px
+      height: 296px
+      object-fit: cover
+      @media (max-width: 1210px)
+        width: 216px
+        height: 234px
+      @media (max-width: 980px)
+        width: 100%
+        height: 155px
+    &_button
+      position: absolute
+      bottom: 14%
+      right: 8%
 
   &__hoodies
     position: relative
@@ -223,6 +259,12 @@ table
       width: 563px
       height: 345px
       object-fit: cover
+      @media (max-width: 1210px)
+        width: 445px
+        height: 272px
+      @media (max-width: 980px)
+        width: 100%
+        height: 180px
     &_button
       position: absolute
       transform: rotate(37.04deg)
@@ -238,8 +280,8 @@ table
     display: flex
     margin-top: 21px
   &_button
-    display: inline-block
-    margin: 0 auto
+    display: flex
+    justify-content: center
     margin-top: 25px
 
 .catalog
@@ -261,30 +303,3 @@ table
     margin-top: 60px
     display: flex
     justify-content: space-between
-
-.catalog
-  margin-top: 130px
-  &Up
-    display: flex
-    align-items: end
-    justify-content: space-between
-    &_img
-      width: 919px
-      height: 200px
-      object-fit: cover
-  &Down
-    margin-top: 60px
-
-    display: flex
-    justify-content: space-between
-
-::-webkit-scrollbar
-  width: 8px
-  background-color: transparent
-
-::-webkit-scrollbar-track
-  background-color: #ffffff
-
-::-webkit-scrollbar-thumb
-  background-color: #FDA3C4
-  border-radius: 10px
