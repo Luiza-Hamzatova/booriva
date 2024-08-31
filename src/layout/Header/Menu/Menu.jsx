@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styles from "./Menu.module.sass";
 
 const Menu = () => {
+  
   return (
     <ul className={styles.menu}>
       <li>
