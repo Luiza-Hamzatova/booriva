@@ -19,10 +19,6 @@ ul, li
   margin: 0
   list-style-type: none
 
-::selection
-  background-color: var(--taffy-pink)
-  color: var(--white)
-
 
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, address, em, img, strong,
@@ -91,3 +87,12 @@ table
     padding: 0 50px
   @media (max-width: 768px)
     padding: 0 15px
+
+
+::-webkit-scrollbar
+  width: 7px
+  background-color: transparent
+
+::-webkit-scrollbar-thumb
+  background-color: var(--taffy-pink)
+  border-radius: 1px
