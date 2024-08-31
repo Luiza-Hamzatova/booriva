@@ -1,0 +1,194 @@
+.newColection
+    margin-top: 135px
+    display: flex
+    justify-content: center
+    gap: 15px
+    @media (max-width: 1182px)
+        gap: 10px
+    @media (max-width: 930px)
+        gap: 8px
+    @media (max-width: 768px)
+        gap: 6px
+    @media (max-width: 480px)
+        display: none
+    &__Left, &__Rigth
+        display: flex
+        flex-direction: column
+        gap: 15px
+
+        @media (max-width: 1182px)
+            gap: 10px
+        @media (max-width: 930px)
+            gap: 8px
+        @media (max-width: 768px)
+            gap: 6px
+    &_flex
+        display: flex
+        gap: 15px
+        @media (max-width: 1182px)
+            gap: 10px
+        @media (max-width: 930px)
+            gap: 8px
+        @media (max-width: 768px)
+            gap: 6px
+
+    &__tshirts
+        position: relative
+        & img
+            width: 563px
+            height: 345px
+            object-fit: cover
+            @media (max-width: 1182px)
+                width: 443px
+                height: 272px
+            @media (max-width: 930px)
+                width: 365px
+                height: 180px
+            @media (max-width: 768px)
+                width: 219px
+                height: 108px
+
+        &_button
+            position: absolute
+            left: 7%
+            bottom: 7%
+    &__downclothes
+        position: relative
+        & img
+            width: 274px
+            height: 296px
+            object-fit: cover
+            @media (max-width: 1182px)
+                width: 216px
+                height: 234px
+            @media (max-width: 930px)
+                width: 177px
+                height: 154px
+            @media (max-width: 768px)
+                width: 106px
+                height: 92px
+        &_button
+            position: absolute
+            width: 106px
+            top: 60%
+            right: 5%
+            transform: rotate(-50.81deg)
+    &__upclothes
+        position: relative
+        & img
+            width: 274px
+            height: 296px
+            object-fit: cover
+            @media (max-width: 1182px)
+                width: 216px
+                height: 234px
+            @media (max-width: 930px)
+                width: 177px
+                height: 154px
+            @media (max-width: 768px)
+                width: 106px
+                height: 92px
+        &_button
+            position: absolute
+            top: 7%
+            right: 10%
+    &__dresses
+        position: relative
+        & img
+            width: 274px
+            height: 296px
+            object-fit: cover
+            @media (max-width: 1182px)
+                width: 216px
+                height: 234px
+            @media (max-width: 930px)
+                width: 177px
+                height: 154px
+            @media (max-width: 768px)
+                width: 106px
+                height: 92px
+        &_button
+            width: 50px
+            position: absolute
+            bottom: 20%
+            left: 8%
+    &__suits
+        position: relative
+        & img
+            width: 274px
+            height: 296px
+            object-fit: cover
+            @media (max-width: 1182px)
+                width: 216px
+                height: 234px
+            @media (max-width: 930px)
+                width: 177px
+                height: 154px
+            @media (max-width: 768px)
+                width: 106px
+                height: 92px
+        &_button
+            position: absolute
+            bottom: 14%
+            right: 8%
+    &__hoodies
+        position: relative
+        & img
+            width: 563px
+            height: 345px
+            object-fit: cover
+            @media (max-width: 1182px)
+                width: 443px
+                height: 272px
+            @media (max-width: 930px)
+                width: 365px
+                height: 180px
+            @media (max-width: 768px)
+                width: 219px
+                height: 108px
+        &_button
+            position: absolute
+            transform: rotate(37.04deg)
+            bottom: 14%
+            left: 8%
+
+.newColectionAdaption
+    display: none
+    margin-top: 65px
+    @media (max-width: 480px)
+        display: block
+
+    &__img_big
+        width: 55%
+        height: 367px
+        object-fit: cover
+        @media (max-width: 360px)
+            height: 182px
+
+    &__img_small
+        width: 100%
+        height: 180px
+        object-fit: cover
+        @media (max-width: 360px)
+            height: 89px
+
+    &__Up
+        display: flex
+        gap: 8px
+
+        &_Left
+            gap: 8px
+            flex-direction: column
+            display: flex
+            width: 45%
+
+    &__Down
+        margin-top: 8px
+        display: flex
+        gap: 8px
+
+        &_Rigth
+            gap: 8px
+            flex-direction: column
+            display: flex
+            width: 45%

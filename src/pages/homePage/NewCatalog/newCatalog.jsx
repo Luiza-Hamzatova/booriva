@@ -1,14 +1,16 @@
-import CardProduct from "../../components/cardProduct/cardProduct";
-import Title from "../../components/title/title";
-import Button from "../../components/button/button";
+import CardProduct from "../../../components/cardProduct/cardProduct";
+import Title from "../../../components/title/title";
+import Button from "../../../components/button/button";
+import styles from "./newCatalog.module.sass";
+
 const NewCatalog = () => {
   return (
     <div>
-      <div className="newCatalog">
-        <div className="newCatalog__title wrapper">
+      <div className={styles.newCatalog}>
+        <div className={styles.newCatalog__title + " wrapper"}>
           <Title valueh1="новинки" valueh2="новинки" />
         </div>
-        <div className="newCatalog_products">
+        <div className={styles.newCatalog_products}>
           <CardProduct
             img={"./img/productImg.png"}
             id={0}
@@ -42,7 +44,7 @@ const NewCatalog = () => {
             isFavorite={false}
           />
         </div>
-        <div className="newCatalog_button ">
+        <div className={styles.newCatalog_button}>
           <Button value={"смотреть все"} />
         </div>
       </div>

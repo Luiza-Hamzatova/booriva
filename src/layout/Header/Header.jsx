@@ -1,5 +1,5 @@
 import Contact from "./Contact/Contact";
-import Logo from "./Logo/Logo";
+import Logo from "../../assets/svg/Logo";
 import Search from "./Search/Search";
 import Wishlist from "./Wishlist/Wishlist";
 import Cart from "./Cart/Cart";
