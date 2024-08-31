@@ -1,8 +1,7 @@
 import EmptyWishlist from "./EmptyWishlist/EmptyWishlist";
 import CardProduct from "../../components/cardProduct/cardProduct";
 import styles from "./index.module.sass";
-import Contact from "../../components/Contact/contact";
-import Contact from "../../components/Contact/contact";
+import Contact from "./../../components/Contact/contact";
 import Delivery from "../../components/delivery/delivery";
 import { useState } from "react";
 
