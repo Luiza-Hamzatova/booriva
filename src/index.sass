@@ -19,6 +19,9 @@ ul, li
   margin: 0
   list-style-type: none
 
+::selection
+  background-color: var(--taffy-pink)
+  color: var(--white)
 
 body, h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, address, em, img, strong,
@@ -67,7 +70,7 @@ table
   --black: #000
   --lightpink: rgba(253, 163, 196, 0.8)
   --lightblack: rgba(0, 0, 0, 0.77)
-
+  --Accent1: #FDA3C4
   // TYPOGRAPHY
   --primary-ff: 'Montserrat', sans-serif
   --secondary-ff: "Sunday Best", sans-serif
@@ -87,8 +90,6 @@ table
     padding: 0 50px
   @media (max-width: 768px)
     padding: 0 15px
-
-
 ::-webkit-scrollbar
   width: 7px
   background-color: transparent
