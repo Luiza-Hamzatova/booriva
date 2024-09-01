@@ -8,7 +8,7 @@ const Contact = () => {
       <ul className={styles.list}>
         <li>
           <a href="#" target="_blank" className={styles.link}>
-            г.Киев, <span>ул. Нижний, 37</span>
+            г.Грозный, <span>ул. Нижний, 37</span>
           </a>
         </li>
         <li className={styles.hidden}>Пн — Вс: с 11:00 до 21:00</li>
