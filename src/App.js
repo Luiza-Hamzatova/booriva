@@ -10,7 +10,12 @@ const App = () => {
   return (
     <div>
       <Header />
-      <CardProductPage/>
+      <Routes>
+        <Route path="/cardProductMore" element={<CardProductPage />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="/catalog" element={<CatalogPage />} />
+        <Route path="/wishlist" element={<Wishlist />} />
+      </Routes>
 
       <Footer />
     </div>

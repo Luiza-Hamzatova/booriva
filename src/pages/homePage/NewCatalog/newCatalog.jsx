@@ -10,39 +10,47 @@ const NewCatalog = () => {
         <div className={styles.newCatalog__title + " wrapper"}>
           <Title valueh1="новинки" valueh2="новинки" />
         </div>
-        <div className={styles.newCatalog_products}>
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
+        <div className={styles.newCatalog__products}>
+          <div className={styles.newCatalog__products_item}>
+            <CardProduct
+              img={"./img/productImg.png"}
+              id={0}
+              price={"1 099"}
+              name={"Cвитшот вставка клетка"}
+              class={"catalog"}
+              isFavorite={false}
+            />
+          </div>
+          <div className={styles.newCatalog__products_item}>
+            <CardProduct
+              img={"./img/productImg.png"}
+              id={0}
+              price={"1 099"}
+              name={"Cвитшот вставка клетка"}
+              class={"catalog"}
+              isFavorite={false}
+            />
+          </div>
+          <div className={styles.newCatalog__products_item}>
+            <CardProduct
+              img={"./img/productImg.png"}
+              id={0}
+              price={"1 099"}
+              name={"Cвитшот вставка клетка"}
+              class={"catalog"}
+              isFavorite={false}
+            />
+          </div>
+          <div className={styles.newCatalog__products_item}>
+            <CardProduct
+              img={"./img/productImg.png"}
+              id={0}
+              price={"1 099"}
+              name={"Cвитшот вставка клетка"}
+              class={"catalog"}
+              isFavorite={false}
+            />
+          </div>
         </div>
         <div className={styles.newCatalog_button}>
           <Button value={"смотреть все"} />

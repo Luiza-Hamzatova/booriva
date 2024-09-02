@@ -1,0 +1,17 @@
+.newCatalog
+    margin: 0 auto
+    margin-top: 50px
+    max-width: 1440px
+    margin-bottom: 50px
+    &_products
+        display: flex
+        margin-top: 21px
+        justify-content: center
+    @media (max-width: 930px)
+        :nth-child(4)
+            display: none
+    @media (max-width: 768px)
+        gap: 6px
+    @media (max-width: 480px)
+        :nth-child(3)
+            display: none
