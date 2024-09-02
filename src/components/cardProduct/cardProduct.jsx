@@ -9,7 +9,12 @@ const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
         styles.cardProduct + (type === "catalog" ? " " + styles.catalog : "")
       }
     >
-      <div className={styles.favoriteSvg}>
+      <div
+        className={
+          styles.favoriteSvg +
+          (isFavorite === true ? " " + styles.favoriteSvg_active : "")
+        }
+      >
         <FavoriteSvg />
       </div>
       <div className={styles.cardProduct__img}>

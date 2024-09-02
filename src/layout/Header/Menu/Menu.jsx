@@ -11,13 +11,13 @@ const Menu = () => {
           Главная
         </Link>
       </li>
-      {menu.map(({ id, name }) => (
+      {/* {menu.map(({ id, name }) => (
         <li key={id}>
           <Link to={`/catalog?menuId=${id}`} className={styles.link}>
             {name}
           </Link>
         </li>
-      ))}
+      ))} */}
     </ul>
   );
 };

@@ -29,7 +29,7 @@
         justify-content: space-between
         align-items: center
         margin: 10px 20px
-        @media (max-width: 1000px)
+        @media (max-width: 1182px)
             margin: 5px 10px
         @media (max-width: 480px)
             margin-top: 10px
@@ -37,7 +37,7 @@
             max-width: 60%
             font-size: 16px
             font-weight: 400
-            @media (max-width: 1000px)
+            @media (max-width: 1182px)
                 font-size: 14px
             @media (max-width: 480px)
                 font-size: 12px
@@ -49,7 +49,7 @@
             color: rgba(253, 163, 196, 1)
             font-size: 24px
             font-weight: 700
-            @media (max-width: 1000px)
+            @media (max-width: 1182px)
                 font-size: 16px
             @media (max-width: 480px)
                 font-size: 14px
@@ -62,11 +62,11 @@
     display: flex
     justify-content: flex-end
     width: 26px
-    @media (max-width: 1000px)
+    @media (max-width: 1182px)
         width: 22px
     @media (max-width: 480px)
         width: 20px
-    @media (max-width: 320px)
+    @media (max-width: 360px)
         width: 14px
     &:hover svg, &_active
         fill: var(--red)
@@ -74,3 +74,12 @@
 .cardProduct.catalog
     width: calc(50% - 8px)
     height: 600px
+    @media (max-width: 1182px)
+        height: 422px
+    @media (max-width: 930px)
+        height: 344px
+    @media (max-width: 480px)
+        width: 100%
+        height: 450px
+    @media (max-width: 360px)
+        height: 402px
