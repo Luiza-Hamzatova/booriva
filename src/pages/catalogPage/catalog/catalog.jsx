@@ -5,6 +5,7 @@ import Title from "../../../components/title/title";
 import styles from "./catalog.module.sass";
 import Filter from "../filter/filter";
 import { useLocation } from "react-router-dom";
+import Baner from "../../homePage/Baner/baner";
 
 const Catalog = () => {
   const [products, setProducts] = useState([]);
@@ -17,30 +18,39 @@ const Catalog = () => {
       .then((res) => res.json())
       .then((res) => setProducts(res[0].products));
   }, [location]);
+
+  useEffect(() => {
+    const categoryId = qs.parse(location.search.substring(1)).categoryId;
+    fetch(
+      `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${categoryId}`
+    )
+      .then((res) => res.json())
+      .then((res) => setProducts(res[0].products));
+  }, [location]);
+
   console.log(products);
 
   return (
     <div className="wrapper">
       <div className={styles.catalog}>
+        <Baner />
         <div className={styles.catalogUp}>
-          <Title valueh1="верх" valueh2="топы" />
-          <img
-            className={styles.catalogUp_img}
-            src="./img/catalog/catalog.png"
-            alt=""
-          />
+          <Title valueh1={menuId} valueh2={categoryId} />
         </div>
         <div className={styles.catalogDown}>
           <Filter />
           <div className={styles.catalog_products}>
-            <CardProduct
-              img={"./img/productImg.png"}
-              id={0}
-              price={"1 099"}
-              name={"Cвитшот вставка клетка"}
-              isFavorite={false}
-              type={"catalog"}
-            />
+            {products.map(({ id, images, name, price }) => (
+              <CardProduct
+                img={images}
+                id={id}
+                key={id}
+                price={price}
+                name={name}
+                isFavorite={false}
+                type={"catalog"}
+              />
+            ))}
           </div>
         </div>
       </div>
