@@ -4,11 +4,10 @@ import { useEffect, useState } from "react";
 
 const Menu = () => {
   const [menu, setMenu] = useState([]);
-  useEffect(() => {
-    fetch("https://640ef1d54ed25579dc40e2a6.mockapi.io/menu")
-      .then((res) => res.json())
-      .then((data) => setMenu(data));
-  }, []);
+  fetch("https://640ef1d54ed25579dc40e2a6.mockapi.io/menu")
+    .then((res) => res.json())
+    .then((data) => setMenu(data));
+
   return (
     <ul className={styles.menu}>
       {menu.map(({ id, name }) => (
