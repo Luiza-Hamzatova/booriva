@@ -4,7 +4,7 @@ import CardProductMore from "./cardProductsMore/cardProductMore";
 import NewCatalog from "./newCatalog/newCatalog";
 import DeliveryTerms from "./deliveryTerms/deliveryTerms";
 
-const cardProductPage = () => {
+const CardProductPage = () => {
   return (
     <div>
       <CardProductMore />
@@ -15,4 +15,4 @@ const cardProductPage = () => {
   );
 };
 
-export default cardProductPage;
+export default CardProductPage;

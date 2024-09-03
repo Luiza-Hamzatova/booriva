@@ -9,51 +9,46 @@ import Baner from "../../homePage/Baner/baner";
 
 import styles from "./catalog.module.sass";
 
-const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
+const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [menuId, setMenuId] = useState("");
-  const [categoryId, setCategoryId] = useState("");
+  const [categoryName, setCategoryName] = useState("");
+  const [menuName, setMenuName] = useState("");
   const [productId, setProductId] = useState("");
   const location = useLocation();
 
   useEffect(() => {
     const params = qs.parse(location.search.substring(1));
     const menuId = params.menuId;
-    const menuName = params.menuName;
+
     const categoryId = params.categoryId;
 
     setMenuId(menuId);
-    setCategoryId(categoryId);
 
-    if (menuId) {
+    if (menuId && !categoryId) {
       fetch(
         `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=${menuId}`
       )
         .then((res) => res.json())
-        .then((res) => setProducts(res[0].products));
+        .then((res) => {
+          setProducts(res[0].products);
+          setMenuName(res[0].menuName);
+        });
     } else if (categoryId) {
       fetch(
-        `https://65588446e93ca47020a966c9.mockapi.io/categories?menuId=${categoryId}`
+        `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${categoryId}`
       )
         .then((res) => res.json())
-        .then((res) => setCategoryId(res[0].categoryId));
-    } else if (menuName) {
-      fetch(
-        `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories?menuName=${menuId}`
-      )
-        .then((res) => res.json())
-        .then((res) => setProducts(res[0].products));
+        .then((res) => console.log(res));
     }
   }, [location]);
-
-  console.log(categoryId);
 
   return (
     <div className="wrapper">
       <div className={styles.catalog}>
         <div className={styles.catalogUp}>
           {/* Название каталога и категории */}
-          <Title valueh1={1} valueh2={categoryId} />
+          <Title valueh1={menuName} valueh2={""} />
           <img
             className={styles.catalogUp_img}
             src="./img/catalog/catalog.png"
@@ -61,10 +56,7 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
           />
         </div>
         <div className={styles.catalogDown}>
-          <Filter
-            activeSubmenuItem={activeSubmenuItem}
-            setActiveSubmenuItem={setActiveSubmenuItem}
-          />
+          <Filter />
           <div className={styles.catalog_products}>
             {products.map(({ id, images, name, price }) => (
               // Переход на страницу товара

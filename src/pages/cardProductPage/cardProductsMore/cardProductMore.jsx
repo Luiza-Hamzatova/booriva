@@ -1,6 +1,7 @@
 import styles from "./cardProductMore.module.sass";
 import FavoriteSvg from "../../../assets/svg/favoriteSvg";
 import Button from "../../../components/button/button";
+import SwiperCard from "./swiperCard/swiperCard";
 const CardProductMore = ({
   id,
   price,
@@ -12,7 +13,8 @@ const CardProductMore = ({
 }) => {
   return (
     <div className={styles.cardProductMore + " wrapper"}>
-      <div className={styles.cardProductMore__imgs}>
+      <SwiperCard />
+      {/* <div className={styles.cardProductMore__imgs}>
         <div className={styles.cardProductMore__imgs_mini}></div>
         <div className={styles.cardProductMore__imgs_main}>
           <div className={styles.cardProductMore__img}>
@@ -27,7 +29,7 @@ const CardProductMore = ({
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
       <div className={styles.cardProductMore__info}>
         <div className={styles.cardProductMore__info_name}>
           Бомбер Gone Crazy хаки
