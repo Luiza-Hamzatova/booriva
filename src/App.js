@@ -5,6 +5,7 @@ import CatalogPage from "./pages/catalogPage";
 import HomePage from "./pages/homePage";
 import Wishlist from "./pages/Wishlist";
 
+
 const App = () => {
   return (
     <div>

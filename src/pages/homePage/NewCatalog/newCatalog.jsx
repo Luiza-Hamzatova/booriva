@@ -15,9 +15,7 @@ const NewCatalog = () => {
   useEffect(() => {
     const menuId = qs.parse(location.search.substring(1)).menuId;
 
-    fetch(
-      `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=000`
-    )
+    fetch(`https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=000`)
       .then((res) => res.json())
       .then((res) => setProducts(res[0].products));
   }, [location]);

@@ -17,9 +17,6 @@ const Menu = () => {
           </Link>
         </li>
       ))}
-      <Link to="/" className={styles.link}>
-        #Boorivagirls
-      </Link>
     </ul>
   );
 };
