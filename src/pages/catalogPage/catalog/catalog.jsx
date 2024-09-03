@@ -9,11 +9,20 @@ import Baner from "../../homePage/Baner/baner";
 
 const Catalog = () => {
   const [products, setProducts] = useState([]);
+  const [menuId, setMenuId] = useState("");
+  const [categoryId, setCategoryId] = useState("");
+  const [productId, setProductId] = useState("");
   const location = useLocation();
 
   useEffect(() => {
-    const menuId = qs.parse(location.search.substring(1)).menuId;
-    const categoryId = qs.parse(location.search.substring(1)).categoryId;
+    const params = qs.parse(location.search.substring(1));
+    const menuId = params.menuId;
+    const categoryId = params.categoryId;
+    const productId = params.productId;
+
+    setMenuId(menuId);
+    setCategoryId(categoryId);
+    setProductId(productId);
 
     if (menuId) {
       fetch(
@@ -21,10 +30,15 @@ const Catalog = () => {
       )
         .then((res) => res.json())
         .then((res) => setProducts(res[0].products));
-    }
-    if (categoryId) {
+    } else if (categoryId) {
       fetch(
-        `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${categoryId}`
+        `https://65588446e93ca47020a966c9.mockapi.io/categories?menuId=${categoryId}`
+      )
+        .then((res) => res.json())
+        .then((res) => setCategoryId(res[0].categoryId));
+    } else if (productId) {
+      fetch(
+        `https://6569c6cede53105b0dd7a33a.mockapi.io/product?id=${productId}`
       )
         .then((res) => res.json())
         .then((res) => setProducts(res[0].products));
@@ -32,12 +46,14 @@ const Catalog = () => {
   }, [location]);
 
   console.log(products);
+  console.log(categoryId);
 
   return (
     <div className="wrapper">
       <div className={styles.catalog}>
         <div className={styles.catalogUp}>
-          <Title valueh1={1} valueh2={1} />
+          {/* Название каталога и категории */}
+          <Title valueh1={categoryId} valueh2={categoryId} />
           <img
             className={styles.catalogUp_img}
             src="./img/catalog/catalog.png"
@@ -48,7 +64,9 @@ const Catalog = () => {
           <Filter />
           <div className={styles.catalog_products}>
             {products.map(({ id, images, name, price }) => (
+              // Переход на страницу товара
               <CardProduct
+                href={`/cardProductPage?productId=${id}`}
                 img={images}
                 id={id}
                 key={id}

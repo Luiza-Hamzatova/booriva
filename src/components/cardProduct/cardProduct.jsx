@@ -2,9 +2,10 @@ import FavoriteSvg from "./../../assets/svg/favoriteSvg";
 
 import styles from "./cardProduct.module.sass";
 
-const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
+const CardProduct = ({ id, price, name, img, isFavorite, type, href }) => {
   return (
     <div
+      href={href}
       className={
         styles.cardProduct + (type === "catalog" ? " " + styles.catalog : "")
       }
