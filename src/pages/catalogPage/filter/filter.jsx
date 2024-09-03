@@ -32,7 +32,7 @@ const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
             {categories.map(({ id, name }) => (
               <li key={id}>
                 <Link
-                  to={`?menuId=${params.menuId}&categoryId=${id}`}
+                  to={`?menuId=${params.menuId}&categoryId=${name}`}
                   className={styles.item}
                   onClick={() => {
                     setActiveSubmenuItem(id);

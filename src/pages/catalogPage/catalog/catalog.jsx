@@ -19,12 +19,11 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   useEffect(() => {
     const params = qs.parse(location.search.substring(1));
     const menuId = params.menuId;
+    const menuName = params.menuName;
     const categoryId = params.categoryId;
-    const productId = params.productId;
 
     setMenuId(menuId);
     setCategoryId(categoryId);
-    setProductId(productId);
 
     if (menuId) {
       fetch(
@@ -38,16 +37,15 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
       )
         .then((res) => res.json())
         .then((res) => setCategoryId(res[0].categoryId));
-    } else if (productId) {
+    } else if (menuName) {
       fetch(
-        `https://6569c6cede53105b0dd7a33a.mockapi.io/product?id=${productId}`
+        `https://640ef1d54ed25579dc40e2a6.mockapi.io/categories?menuName=${menuId}`
       )
         .then((res) => res.json())
         .then((res) => setProducts(res[0].products));
     }
   }, [location]);
 
-  console.log(products);
   console.log(categoryId);
 
   return (
@@ -55,7 +53,7 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
       <div className={styles.catalog}>
         <div className={styles.catalogUp}>
           {/* Название каталога и категории */}
-          <Title valueh1={categoryId} valueh2={categoryId} />
+          <Title valueh1={1} valueh2={categoryId} />
           <img
             className={styles.catalogUp_img}
             src="./img/catalog/catalog.png"
