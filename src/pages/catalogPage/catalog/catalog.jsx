@@ -1,13 +1,15 @@
 import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 import qs from "qs";
+
 import CardProduct from "../../../components/cardProduct/cardProduct";
 import Title from "../../../components/title/title";
-import styles from "./catalog.module.sass";
 import Filter from "../filter/filter";
-import { useLocation } from "react-router-dom";
 import Baner from "../../homePage/Baner/baner";
 
-const Catalog = () => {
+import styles from "./catalog.module.sass";
+
+const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   const [products, setProducts] = useState([]);
   const [menuId, setMenuId] = useState("");
   const [categoryId, setCategoryId] = useState("");
@@ -61,7 +63,10 @@ const Catalog = () => {
           />
         </div>
         <div className={styles.catalogDown}>
-          <Filter />
+          <Filter
+            activeSubmenuItem={activeSubmenuItem}
+            setActiveSubmenuItem={setActiveSubmenuItem}
+          />
           <div className={styles.catalog_products}>
             {products.map(({ id, images, name, price }) => (
               // Переход на страницу товара

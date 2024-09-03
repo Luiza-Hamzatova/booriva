@@ -1,9 +1,27 @@
+import { useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
+import qs from "qs";
+
 import CardProduct from "../../../components/cardProduct/cardProduct";
 import Title from "../../../components/title/title";
 import Button from "../../../components/button/button";
 import styles from "./newCatalog.module.sass";
 
 const NewCatalog = () => {
+  const [products, setProducts] = useState([]);
+  const [menuId, setMenuId] = useState("");
+  const location = useLocation();
+
+  useEffect(() => {
+    const menuId = qs.parse(location.search.substring(1)).menuId;
+
+    fetch(
+      `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=000`
+    )
+      .then((res) => res.json())
+      .then((res) => setProducts(res[0].products));
+  }, [location]);
+
   return (
     <div>
       <div className={styles.newCatalog}>
@@ -11,38 +29,17 @@ const NewCatalog = () => {
           <Title valueh1="новинки" valueh2="новинки" />
         </div>
         <div className={styles.newCatalog_products}>
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
-          <CardProduct
-            img={"./img/productImg.png"}
-            id={0}
-            price={"1 099"}
-            name={"Cвитшот вставка клетка"}
-            class={"catalog"}
-            isFavorite={false}
-          />
+          {products.slice(0, 4).map(({ id, images, name, price }) => (
+            <CardProduct
+              img={images}
+              id={id}
+              key={id}
+              price={price}
+              name={name}
+              isFavorite={false}
+              type={"catalog"}
+            />
+          ))}
         </div>
         <div className={styles.newCatalog_button}>
           <Button value={"смотреть все"} />
