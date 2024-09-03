@@ -16,31 +16,17 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   const location = useLocation();
 
   useEffect(() => {
-<<<<<<< HEAD
-    const queryParams = qs.parse(location.search.substring(1));
-    const { menuId, categoryId } = queryParams;
-
-    if (menuId) {
-      setMenuId(menuId);
-=======
     const menuId = qs.parse(location.search.substring(1)).menuId;
     const categoryId = qs.parse(location.search.substring(1)).categoryId;
 
     if (menuId) {
->>>>>>> 3986dbeec61307519d6172de65762f555c4c1f4d
       fetch(
         `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=${menuId}`
       )
         .then((res) => res.json())
         .then((res) => setProducts(res[0].products));
-    }
-<<<<<<< HEAD
-
+    }console.log(menuId)
     if (categoryId) {
-      setCategoryId(categoryId);
-=======
-    if (categoryId) {
->>>>>>> 3986dbeec61307519d6172de65762f555c4c1f4d
       fetch(
         `https://65588446e93ca47020a966c9.mockapi.io/categoriesCatalog?categoryId=${categoryId}`
       )
@@ -49,13 +35,11 @@ const Catalog = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
     }
   }, [location]);
 
-  console.log(products.menuName);
-
   return (
     <div className="wrapper">
       <div className={styles.catalog}>
         <div className={styles.catalogUp}>
-          <Title valueh1={1} valueh2={1} />
+          <Title valueh1={menuId} valueh2={categoryId} />
           <img
             className={styles.catalogUp_img}
             src="./img/catalog/catalog.png"

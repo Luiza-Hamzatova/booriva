@@ -20,7 +20,6 @@ const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
   }, [params.menuId]);
 
   const handlePriceChange = (e) => {
-    e.persist();
     setSelectedPrice(e.target.value);
   };
 
@@ -34,11 +33,7 @@ const Filter = ({ activeSubmenuItem, setActiveSubmenuItem }) => {
               <li key={id}>
                 <Link
                   to={`?menuId=${params.menuId}&categoryId=${id}`}
-                  className={
-                    styles.item +
-                    " " +
-                    (id === activeSubmenuItem ? styles.active : "")
-                  }
+                  className={styles.item}
                   onClick={() => {
                     setActiveSubmenuItem(id);
                   }}
