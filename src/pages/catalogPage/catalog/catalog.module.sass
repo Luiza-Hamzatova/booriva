@@ -1,19 +1,34 @@
 .catalog
     margin-top: 130px
     margin-bottom: 100px
+    &_title
+        display: inline-block
+        @media (max-width: 360px)
+            display: none
     &_products
+        margin-left: 30px
         width: 949px
         display: flex
         flex-wrap: wrap
         gap: 16px
+        @media (max-width: 640px)
+            margin-left: 0
     &Up
         display: flex
         align-items: end
         justify-content: space-between
         &_img
-            width: 919px
+            width: 83%
             height: 200px
             object-fit: cover
+            @media (max-width: 930px)
+                width: 90%
+                height: 152px
+            @media (max-width: 640px)
+                height: 125px
+            @media (max-width: 360px)
+                height: 120px
+                width: 100%
     &Down
         margin-top: 60px
         display: flex

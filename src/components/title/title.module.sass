@@ -1,18 +1,26 @@
 .title
     display: inline-block
-    img
+    margin-right: 20px
+    & img
+        @media (max-width: 630px)
+            margin-top: -10px
+            width: 50px
         @media (max-width: 480px)
-            width: 37px
+            margin-top: -15px
+            width: 40px
         @media (max-width: 320px)
             width: 24px
     &h1
         font-family: Sunday Best
-        font-size: 54px
+        font-size: 46px
         position: relative
+        line-height: 60px
         color: var(--taffy-pink)
-        @media (max-width: 480px)
+        @media (max-width: 630px)
             font-size: 36px
-        @media (max-width: 320px)
+        @media (max-width: 480px)
+            font-size: 30px
+        @media (max-width: 360px)
             font-size: 26px
 
     &h2

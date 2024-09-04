@@ -23,7 +23,7 @@ const NewCatalog = () => {
         <div className={styles.newCatalog__title + " wrapper"}>
           <Title valueh1="новинки" valueh2="новинки" />
         </div>
-        <div className={styles.newCatalog_products}>
+        <div className={styles.newCatalog__products}>
           {products.slice(0, 4).map(({ id, images, name, price }) => (
             <CardProduct
               img={images}
@@ -32,7 +32,7 @@ const NewCatalog = () => {
               price={price}
               name={name}
               isFavorite={false}
-              type={"catalog"}
+              type={""}
             />
           ))}
         </div>
