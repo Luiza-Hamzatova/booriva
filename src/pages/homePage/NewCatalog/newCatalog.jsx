@@ -9,12 +9,9 @@ import styles from "./newCatalog.module.sass";
 
 const NewCatalog = () => {
   const [products, setProducts] = useState([]);
-  const [menuId, setMenuId] = useState("");
   const location = useLocation();
 
   useEffect(() => {
-    const menuId = qs.parse(location.search.substring(1)).menuId;
-
     fetch(`https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=000`)
       .then((res) => res.json())
       .then((res) => setProducts(res[0].products));
@@ -26,7 +23,7 @@ const NewCatalog = () => {
         <div className={styles.newCatalog__title + " wrapper"}>
           <Title valueh1="новинки" valueh2="новинки" />
         </div>
-        <div className={styles.newCatalog_products}>
+        <div className={styles.newCatalog__products}>
           {products.slice(0, 4).map(({ id, images, name, price }) => (
             <CardProduct
               img={images}
@@ -35,7 +32,7 @@ const NewCatalog = () => {
               price={price}
               name={name}
               isFavorite={false}
-              type={"catalog"}
+              type={""}
             />
           ))}
         </div>

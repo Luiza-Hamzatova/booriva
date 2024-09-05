@@ -5,6 +5,18 @@
     margin-bottom: 50px
     &_products
         display: flex
+        justify-content: center
+        margin-top: 41px
+        gap: 20px
+
+        @media (max-width: 1181px)
+            :nth-child(4)
+                display: none
+        @media (max-width: 930px)
+            display: block
+            :nth-child(4)
+                display: block
+
         margin-top: 21px
     @media (max-width: 1182px)
 
@@ -17,6 +29,7 @@
     &_button
         display: flex
         justify-content: center
+        margin: 0 auto
         margin-top: 25px
         @media (max-width: 930px)
             margin-top: 0px
