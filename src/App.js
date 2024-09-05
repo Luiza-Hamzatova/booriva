@@ -4,7 +4,6 @@ import Header from "./layout/Header/Header";
 import CatalogPage from "./pages/catalogPage";
 import HomePage from "./pages/homePage";
 import Wishlist from "./pages/Wishlist";
-import CardProduct from "./components/cardProduct/cardProduct";
 import CardProductPage from "./pages/cardProductPage";
 
 const App = () => {

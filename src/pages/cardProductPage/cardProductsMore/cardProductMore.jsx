@@ -23,7 +23,7 @@ const CardProductMore = ({
   useEffect(() => {
     const productId = qs.parse(location.search.substring(1)).productId;
 
-    fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${productId}`)
+    fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product?id=/${productId}`)
       .then((res) => res.json())
       .then((res) => setProductId(res[0].productId));
   }, [location]);
