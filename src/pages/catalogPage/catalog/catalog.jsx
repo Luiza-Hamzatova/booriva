@@ -43,18 +43,18 @@ const Catalog = () => {
   return (
     <div className="wrapper">
       <div className={styles.catalog}>
-        <div className={styles.catalogUp}>
+        <div className={styles.catalog__Up}>
           {/* Название каталога и категории */}
           <div className={styles.calalog_title}>
             <Title valueh1={menuName} valueh2={categoryName} />
           </div>
           <img
-            className={styles.catalogUp_img}
+            className={styles.catalog__Up_img}
             src="./img/catalog/catalog.png"
             alt=""
           />
         </div>
-        <div className={styles.catalogDown}>
+        <div className={styles.catalog__Down}>
           <Filter />
           <div className={styles.catalog_products}>
             {products.map(({ id, images, name, price }) => (
