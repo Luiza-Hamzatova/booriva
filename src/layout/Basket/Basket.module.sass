@@ -1,0 +1,41 @@
+.wrapper
+    position: relative
+    position: fixed
+    top: 0
+    left: 0
+    z-index: 7
+    width: 100%
+    height: 100vh
+    &_open
+        opacity: 1
+    &_close
+        animation: close .1s .4s 1 forwards
+        @keyframes close
+            0%
+                z-index: 7
+            100%
+                z-index: -1
+.bg
+    width: 100%
+    height: 100vh
+    background-color: rgba(0, 0, 0, 77%)
+    transition: .3s linear
+    &_open
+        opacity: 1
+    &_close
+        opacity: 0
+
+.basket
+    height: 100vh
+    width: 518px
+    background-color: #fff
+    position: absolute
+    z-index: 8
+    right: 0
+    top: 0
+    transition: .3s linear
+    &_open
+        transform: translateX(0)
+    &_close
+        opacity: 0
+        transform: translateX(100%)

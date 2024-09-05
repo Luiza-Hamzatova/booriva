@@ -18,7 +18,7 @@ const Catalog = () => {
     if (window.location.search) {
       const params = qs.parse(location.search.substring(1));
 
-      if (params.menuId) {
+      if (params.menuId && !params.categoryId) {
         fetch(
           `https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=${params.menuId}`
         )
@@ -60,8 +60,6 @@ const Catalog = () => {
             {products.map(({ id, images, name, price }) => (
               // Переход на страницу товара
               <CardProduct
-                link
-                to={`/cardProductPage?productId=${id}`}
                 img={images}
                 id={id}
                 key={id}

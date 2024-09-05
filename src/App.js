@@ -5,16 +5,20 @@ import CatalogPage from "./pages/catalogPage";
 import HomePage from "./pages/homePage";
 import Wishlist from "./pages/Wishlist";
 import CardProductPage from "./pages/cardProductPage";
+import Basket from "./layout/Basket/Basket";
+import { useState } from "react";
 
 const App = () => {
+  const [isBasketOpen, setIsBasketOpen] = useState(true);
   return (
     <div>
-      <Header />
+      <Header setIsBasketOpen={setIsBasketOpen} />
+      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
         <Route path="/wishlist" element={<Wishlist />} />
-        <Route path="/cardProductPage" element={<CardProductPage />} />
+        <Route path="/product" element={<CardProductPage />} />
       </Routes>
 
       <Footer />

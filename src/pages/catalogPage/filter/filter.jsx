@@ -6,6 +6,8 @@ import styles from "./filter.module.sass";
 
 const Filter = () => {
   const [categories, setCategories] = useState([]);
+  const [menuId, setMenuId] = useState([]);
+  const [price, setPrice] = useState("desktopAllPrices");
   const params = qs.parse(window.location.search.substring(1));
 
   useEffect(() => {
@@ -14,9 +16,11 @@ const Filter = () => {
     )
       .then((res) => res.json())
       .then((res) => {
+        setMenuId(res.menuId);
         setCategories(res.categories);
       });
   }, [params.menuId]);
+  console.log(price);
 
   return (
     <div className={styles.filter}>
@@ -27,7 +31,7 @@ const Filter = () => {
             {categories.map(({ id, name }) => (
               <li key={id}>
                 <Link
-                  to={`?categoryId=${id}`}
+                  to={`?categoryId=${id}&menuId=${menuId}`}
                   className={styles.item}
                 >
                   {name}
@@ -46,6 +50,8 @@ const Filter = () => {
               id="desktopAllPrices"
               name="price"
               value="desktopAllPrices"
+              checked={price === "desktopAllPrices"}
+              onChange={(e) => setPrice(e.target.value)}
             />
             <label htmlFor="desktopAllPrices">Все цены</label>
           </div>
@@ -55,6 +61,8 @@ const Filter = () => {
               id="desktopUpto500"
               name="price"
               value="desktopUpto500"
+              checked={price === "desktopUpto500"}
+              onChange={(e) => setPrice(e.target.value)}
             />
             <label htmlFor="desktopUpto500">до 500</label>
           </div>
@@ -64,6 +72,8 @@ const Filter = () => {
               id="desktopFrom500to1000"
               name="price"
               value="desktopFrom500to1000"
+              checked={price === "desktopFrom500to1000"}
+              onChange={(e) => setPrice(e.target.value)}
             />
             <label htmlFor="desktopFrom500to1000">500 — 1000</label>
           </div>
@@ -73,6 +83,8 @@ const Filter = () => {
               id="desktopFrom1000to1500"
               name="price"
               value="desktopFrom1000to1500"
+              checked={price === "desktopFrom1000to1500"}
+              onChange={(e) => setPrice(e.target.value)}
             />
             <label htmlFor="desktopFrom1000to1500">1000 — 1500</label>
           </div>
@@ -82,6 +94,8 @@ const Filter = () => {
               id="desktopFrom1500"
               name="price"
               value="desktopFrom1500"
+              checked={price === "desktopFrom1500"}
+              onChange={(e) => setPrice(e.target.value)}
             />
             <label htmlFor="desktopFrom1500">от 1500</label>
           </div>
