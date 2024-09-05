@@ -1,10 +1,11 @@
 .catalog
     margin-top: 130px
     margin-bottom: 100px
+    @media (max-width: 640px)
+        margin-top: 80px
     &_title
         display: inline-block
-        @media (max-width: 360px)
-            display: none
+
     &_products
         margin-left: 30px
         width: 949px
@@ -13,10 +14,13 @@
         gap: 16px
         @media (max-width: 640px)
             margin-left: 0
-    &Up
+    &__Up
         display: flex
         align-items: end
         justify-content: space-between
+        @media (max-width: 360px)
+            :nth-child(1)
+                display: none
         &_img
             width: 83%
             height: 200px
@@ -29,7 +33,7 @@
             @media (max-width: 360px)
                 height: 120px
                 width: 100%
-    &Down
+    &__Down
         margin-top: 60px
         display: flex
         justify-content: space-between
