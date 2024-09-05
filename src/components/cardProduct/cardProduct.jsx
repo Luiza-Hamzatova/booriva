@@ -1,11 +1,14 @@
+import { Link } from "react-router-dom";
 import FavoriteSvg from "./../../assets/svg/favoriteSvg";
 
 import styles from "./cardProduct.module.sass";
 
-const CardProduct = ({ id, price, name, img, isFavorite, type, href }) => {
+const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
+  
+  
+  
   return (
     <div
-      href={href}
       className={
         styles.cardProduct + (type === "catalog" ? " " + styles.catalog : "")
       }
@@ -20,6 +23,7 @@ const CardProduct = ({ id, price, name, img, isFavorite, type, href }) => {
       </div>
       <div className={styles.cardProduct__img}>
         <img src={img} alt="" />
+        <Link to={`/product?id=${id}`}></Link>
         <center>
           <div className={styles.cardProduct_line}></div>
         </center>

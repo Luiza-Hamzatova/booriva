@@ -1,0 +1,65 @@
+.header {
+  color: umbra;
+  background-color: white;
+  border-bottom: 1px solid #FDA3C4;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 6;
+  margin-bottom: 20px;
+}
+.header .headerContent {
+  position: relative;
+}
+.header .headerInner {
+  padding: 10px 15px;
+}
+@media (min-width: 480px) {
+  .header .headerInner {
+    padding: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .header .headerInner {
+    display: flex;
+    flex-direction: column;
+    padding: 0 15px;
+  }
+}
+@media (min-width: 1000px) {
+  .header .headerInner {
+    padding: 0 50px;
+  }
+}
+@media (min-width: 1440px) {
+  .header .headerInner {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0;
+  }
+}
+.header .topRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+@media (min-width: 768px) {
+  .header .topRow {
+    padding: 10px 0 12.5px;
+  }
+}
+@media (min-width: 1000px) {
+  .header .topRow {
+    padding: 13px 0 12.5px;
+  }
+}
+@media (min-width: 1440px) {
+  .header .topRow {
+    padding: 10px 0 12.5px;
+  }
+}
+.header .rightCol {
+  display: flex;
+  align-items: center;
+}/*# sourceMappingURL=Header.module.css.map */

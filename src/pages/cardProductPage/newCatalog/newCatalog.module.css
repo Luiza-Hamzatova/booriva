@@ -1,0 +1,26 @@
+.newCatalog {
+  margin: 0 auto;
+  margin-top: 50px;
+  max-width: 1440px;
+  margin-bottom: 50px;
+}
+.newCatalog_products {
+  display: flex;
+  margin-top: 21px;
+  justify-content: center;
+}
+@media (max-width: 930px) {
+  .newCatalog :nth-child(4) {
+    display: none;
+  }
+}
+@media (max-width: 768px) {
+  .newCatalog {
+    gap: 6px;
+  }
+}
+@media (max-width: 480px) {
+  .newCatalog :nth-child(3) {
+    display: none;
+  }
+}/*# sourceMappingURL=newCatalog.module.css.map */

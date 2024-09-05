@@ -1,0 +1,56 @@
+.button {
+  display: inline-block;
+  position: relative;
+  height: 50px;
+  padding: 0 45px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  fill: var(--taffy-pink);
+}
+.button:hover svg {
+  filter: drop-shadow(0 2px 2px rgba(253, 163, 196, 0.5215686275));
+  fill: var(--big-pink);
+}
+.button:active svg {
+  fill: red;
+}
+@media (max-width: 768px) {
+  .button {
+    font-size: 16px;
+    height: 44px;
+  }
+}
+.button:svg {
+  width: 100%;
+  height: 100%;
+  transition: 0.2s;
+  fill: var(--Accent1);
+}
+
+.bg {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  z-index: 0;
+}
+
+.text {
+  display: flex;
+  position: relative;
+  z-index: 1;
+  justify-content: center;
+  align-items: center;
+  height: calc(100% - 5px);
+  width: 100%;
+  font-family: "Sunday Best";
+  color: #FFFFFF;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+@media (max-width: 999px) {
+  .text {
+    font-size: 16px;
+  }
+}/*# sourceMappingURL=button.module.css.map */

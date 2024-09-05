@@ -1,0 +1,36 @@
+.deliveryTerms {
+  margin: 0 auto;
+  margin-top: 70px;
+  margin-bottom: 95px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 1390px;
+}
+.deliveryTerms__info {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.deliveryTerms__info h3 {
+  font-size: 25px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.deliveryTerms__info p {
+  font-size: 16px;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+.deliveryTerms__img3 {
+  width: 79px;
+  height: 81px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.deliveryTerms__img {
+  width: 81px;
+  height: 98px;
+  -o-object-fit: cover;
+     object-fit: cover;
+}/*# sourceMappingURL=deliveryTerms.module.css.map */

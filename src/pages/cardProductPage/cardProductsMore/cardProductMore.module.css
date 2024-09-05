@@ -1,0 +1,151 @@
+.cardProductMore {
+  margin-top: 200px;
+  display: flex;
+  gap: 112px;
+}
+@media (max-width: 1182px) {
+  .cardProductMore {
+    width: 250px;
+    height: 366px;
+  }
+}
+@media (max-width: 768px) {
+  .cardProductMore {
+    width: 225px;
+  }
+}
+@media (max-width: 480px) {
+  .cardProductMore {
+    width: 50%;
+    height: 322px;
+  }
+}
+@media (max-width: 320px) {
+  .cardProductMore {
+    height: 200px;
+  }
+}
+.cardProductMore__img {
+  position: relative;
+  width: 463px;
+  height: 609px;
+  padding: 5px;
+  cursor: pointer;
+  border: solid 1px black;
+}
+.cardProductMore__img img {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.cardProductMore_line {
+  background: rgb(253, 163, 196);
+  height: 2px;
+  width: 92%;
+}
+.cardProductMore__info {
+  width: 471px;
+}
+.cardProductMore__info_name {
+  font-size: 36px;
+  font-weight: 600;
+}
+@media (max-width: 1182px) {
+  .cardProductMore__info_name {
+    font-size: 14px;
+  }
+}
+@media (max-width: 1182px) and (max-width: 480px) {
+  .cardProductMore__info_name {
+    font-size: 12px;
+  }
+}
+@media (max-width: 1182px) and (max-width: 320px) {
+  .cardProductMore__info_name {
+    font-size: 10px;
+    max-width: 70%;
+  }
+}
+.cardProductMore__info_price {
+  margin-top: 10px;
+  color: rgb(253, 163, 196);
+  font-size: 42px;
+  font-weight: 700;
+}
+@media (max-width: 1182px) {
+  .cardProductMore__info_price {
+    font-size: 16px;
+  }
+}
+@media (max-width: 480px) {
+  .cardProductMore__info_price {
+    font-size: 14px;
+  }
+}
+@media (max-width: 320px) {
+  .cardProductMore__info_price {
+    font-size: 10px;
+  }
+}
+.cardProductMore__info_size {
+  margin-top: 10px;
+  margin-bottom: 20px;
+  font-style: italic;
+}
+.cardProductMore__info_size .flex {
+  margin-top: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.cardProductMore__info_size h3 {
+  padding: 7px 0;
+  font-size: 20px;
+  border-top: solid 1px black;
+  border-bottom: solid 1px black;
+}
+.cardProductMore__info_desc {
+  line-height: 17px;
+  border-bottom: 1px dotted rgb(253, 163, 196);
+  padding-bottom: 13px;
+  margin-top: 30px;
+  margin-bottom: 13px;
+  font-size: 14px;
+}
+.cardProductMore__info_details {
+  font-size: 14px;
+}
+.cardProductMore__info_details span {
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.cardProductMore__info_button {
+  width: 220px;
+  height: 55px;
+}
+
+.favoriteSvg {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  display: flex;
+  justify-content: flex-end;
+  width: 26px;
+}
+@media (max-width: 1182px) {
+  .favoriteSvg {
+    width: 22px;
+  }
+}
+@media (max-width: 480px) {
+  .favoriteSvg {
+    width: 20px;
+  }
+}
+@media (max-width: 360px) {
+  .favoriteSvg {
+    width: 14px;
+  }
+}
+.favoriteSvg:hover svg, .favoriteSvg_active {
+  fill: var(--red);
+}/*# sourceMappingURL=cardProductMore.module.css.map */

@@ -1,0 +1,424 @@
+.boorivaStore {
+  color: var(--umbra);
+  display: grid;
+  grid-template-columns: 0.75fr 1fr;
+  grid-template-rows: repeat(10, 40px);
+  position: relative;
+  padding: 0 15px;
+  max-width: 324px;
+  margin: 40px auto;
+}
+@media (min-width: 480px) {
+  .boorivaStore {
+    grid-template-columns: 0.52fr 1fr;
+    grid-template-rows: repeat(11, 45px);
+    max-width: 475px;
+    margin: 50px auto;
+  }
+}
+@media (min-width: 768px) {
+  .boorivaStore {
+    grid-template-columns: 0.5fr 1fr 0.5fr;
+    grid-template-rows: repeat(6, 100px);
+    max-width: 750px;
+  }
+}
+@media (min-width: 1000px) {
+  .boorivaStore {
+    grid-template-rows: repeat(5, 150px);
+    max-width: 900px;
+    margin: 60px auto;
+    padding: 0;
+  }
+}
+@media (min-width: 1440px) {
+  .boorivaStore {
+    grid-template-columns: 0.34fr 1fr 0.45fr;
+    max-width: 1040px;
+  }
+}
+
+.title {
+  font-family: var(--secondary-ff);
+  font-size: 26px;
+  gap: 30px;
+  font-weight: var(--regular-fw);
+  grid-column: 1/2;
+  grid-row: 2/3;
+  position: absolute;
+}
+.title span {
+  font-family: inherit;
+}
+@media (min-width: 480px) {
+  .title span:last-child {
+    align-self: end;
+  }
+}
+@media (min-width: 480px) {
+  .title {
+    font-size: 36px;
+    display: flex;
+    flex-direction: column;
+    grid-row: 2/5;
+  }
+}
+@media (min-width: 768px) {
+  .title {
+    font-size: 54px;
+    grid-row: 2/4;
+  }
+}
+
+.info {
+  font-size: 12px;
+  line-height: 133.333%;
+  grid-column: 1/2;
+  grid-row: 6/7;
+  margin-top: 25px;
+}
+@media (min-width: 480px) {
+  .info {
+    grid-row: 6/8;
+    margin-top: 15px;
+  }
+}
+@media (min-width: 768px) {
+  .info {
+    font-size: 16px;
+    grid-row: 5/6;
+    margin-top: -18px;
+  }
+}
+@media (min-width: 1000px) {
+  .info {
+    grid-row: 4/5;
+    margin-top: 90px;
+  }
+}
+
+.boorivaStoreImg {
+  background-color: lightgray;
+  background-image: url("../../assets/images/boorivaStore.png");
+  background-repeat: no-repeat;
+  background-position: -56.512px -75.992px;
+  background-size: 185.466% 126.555%;
+  display: block;
+  height: 305px;
+  grid-column: 2/3;
+  grid-row: 1/5;
+}
+@media (min-width: 480px) {
+  .boorivaStoreImg {
+    background-position: 50%;
+    background-size: cover;
+    height: 417px;
+  }
+}
+@media (min-width: 768px) {
+  .boorivaStoreImg {
+    position: relative;
+    z-index: -1;
+    height: 485px;
+    grid-row: 1/6;
+  }
+}
+@media (min-width: 1000px) {
+  .boorivaStoreImg {
+    height: 645px;
+  }
+}
+
+.description {
+  font-size: 12px;
+  line-height: 133.333%;
+  grid-column: 1/3;
+  grid-row: 9/11;
+  margin-top: 8px;
+  margin-right: 50px;
+}
+@media (min-width: 480px) {
+  .description {
+    grid-column: 2/3;
+    grid-row: 10/12;
+    margin-top: 30px;
+    margin-right: 0;
+    margin-left: 74px;
+  }
+}
+@media (min-width: 768px) {
+  .description {
+    font-size: 16px;
+    grid-column: 3/4;
+    grid-row: 3/5;
+    margin-top: 20px;
+    margin-left: 16px;
+  }
+}
+
+.verticalTilde {
+  display: none;
+}
+@media (min-width: 768px) {
+  .verticalTilde {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 22px;
+    width: 18px;
+    height: 34px;
+  }
+}
+@media (min-width: 1000px) {
+  .verticalTilde {
+    top: 16px;
+    right: 43px;
+    width: 22px;
+    height: 42px;
+  }
+}
+@media (min-width: 1440px) {
+  .verticalTilde {
+    top: 0;
+    right: 0;
+  }
+}
+
+.horizontalTilde {
+  display: none;
+}
+@media (min-width: 768px) {
+  .horizontalTilde {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: -60px;
+    width: 35px;
+    height: 16px;
+  }
+}
+@media (min-width: 1000px) {
+  .horizontalTilde {
+    top: -3px;
+    right: -42px;
+    width: 42px;
+    height: 18px;
+  }
+}
+@media (min-width: 1440px) {
+  .horizontalTilde {
+    display: none;
+  }
+}
+
+.prime {
+  display: none;
+}
+@media (min-width: 768px) {
+  .prime {
+    display: block;
+    position: absolute;
+    top: 63px;
+    right: -42px;
+    width: 14px;
+    height: 23px;
+  }
+}
+@media (min-width: 1000px) {
+  .prime {
+    top: 90px;
+    right: -70px;
+    width: 16px;
+    height: 26px;
+  }
+}
+@media (min-width: 1440px) {
+  .prime {
+    top: 80px;
+    right: -25px;
+  }
+}
+
+.squigglyLine {
+  display: none;
+}
+@media (min-width: 768px) {
+  .squigglyLine {
+    display: block;
+    position: absolute;
+    top: 114px;
+    right: -62px;
+    width: 99px;
+    height: 23px;
+  }
+}
+@media (min-width: 1000px) {
+  .squigglyLine {
+    top: 165px;
+    right: -95px;
+    width: 115px;
+    height: 26px;
+  }
+}
+@media (min-width: 1440px) {
+  .squigglyLine {
+    right: -80px;
+  }
+}
+
+.heartL {
+  display: none;
+}
+@media (min-width: 768px) {
+  .heartL {
+    display: block;
+    position: absolute;
+    top: 37px;
+    right: -175px;
+    width: 52px;
+    height: 59px;
+  }
+}
+@media (min-width: 1000px) {
+  .heartL {
+    top: 22px;
+    right: -175px;
+    width: 60px;
+    height: 70px;
+  }
+}
+@media (min-width: 1440px) {
+  .heartL {
+    top: 17px;
+    right: -120px;
+  }
+}
+
+.tie2 {
+  display: none;
+}
+@media (min-width: 1000px) {
+  .tie2 {
+    display: block;
+    position: absolute;
+    top: 130px;
+    right: -170px;
+    width: 32px;
+    height: 16px;
+  }
+}
+@media (min-width: 1440px) {
+  .tie2 {
+    top: 120px;
+    right: -150px;
+  }
+}
+
+.tie {
+  display: none;
+}
+@media (min-width: 768px) {
+  .tie {
+    display: block;
+    position: absolute;
+    top: 462px;
+    left: -12px;
+    width: 28px;
+    height: 15px;
+  }
+}
+@media (min-width: 1000px) {
+  .tie {
+    top: auto;
+    left: 19px;
+    bottom: 22px;
+    width: 32px;
+    height: 16px;
+  }
+}
+@media (min-width: 1440px) {
+  .tie {
+    left: 23px;
+  }
+}
+
+.greaterThanSignS {
+  display: none;
+}
+@media (min-width: 768px) {
+  .greaterThanSignS {
+    display: block;
+    position: absolute;
+    top: 505px;
+    left: -50px;
+    width: 22px;
+    height: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .greaterThanSignS {
+    top: 660px;
+    left: 18px;
+    width: 25px;
+    height: 24px;
+  }
+}
+@media (min-width: 1440px) {
+  .greaterThanSignS {
+    left: 40px;
+  }
+}
+
+.greaterThanSignL {
+  display: none;
+}
+@media (min-width: 768px) {
+  .greaterThanSignL {
+    display: block;
+    position: absolute;
+    top: 511px;
+    left: -42px;
+    width: 25px;
+    height: 20px;
+  }
+}
+@media (min-width: 1000px) {
+  .greaterThanSignL {
+    top: 668px;
+    left: 30px;
+    width: 28px;
+    height: 24px;
+  }
+}
+@media (min-width: 1440px) {
+  .greaterThanSignL {
+    left: 48px;
+  }
+}
+
+.heartS {
+  display: none;
+}
+@media (min-width: 768px) {
+  .heartS {
+    display: block;
+    position: absolute;
+    top: 525px;
+    left: -130px;
+    width: 43px;
+    height: 49px;
+  }
+}
+@media (min-width: 1000px) {
+  .heartS {
+    top: 680px;
+    left: -80px;
+    width: 50px;
+    height: 55px;
+  }
+}
+@media (min-width: 1440px) {
+  .heartS {
+    left: -50px;
+  }
+}/*# sourceMappingURL=boorivaStore.module.css.map */

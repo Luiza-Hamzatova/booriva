@@ -27,7 +27,7 @@ const Filter = () => {
             {categories.map(({ id, name }) => (
               <li key={id}>
                 <Link
-                 to={`/catalog?categoryId=${id}`}
+                  to={`?categoryId=${id}`}
                   className={styles.item}
                 >
                   {name}
