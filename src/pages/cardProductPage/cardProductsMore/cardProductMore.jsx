@@ -16,15 +16,14 @@ const CardProductMore = ({
   details,
   href,
 }) => {
-  const [productId, setProductId] = useState("");
+  const [productId, setProductId] = useState([]);
   const location = useLocation();
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
 
   useEffect(() => {
+    const productId = qs.parse(location.search.substring(1)).id;
 
-    fetch(
-      `https://6569c6cede53105b0dd7a33a.mockapi.io/product?id=/${productId}`
-    )
+    fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${productId}`)
       .then((res) => res.json())
       .then((res) => setProductId(res[0].productId));
   }, [location]);
