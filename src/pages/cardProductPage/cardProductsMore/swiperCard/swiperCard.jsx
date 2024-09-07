@@ -42,7 +42,7 @@ const SwiperCard = () => {
         >
           {productId.images?.map((img) => (
             <SwiperSlide className={styles.thumbs__item}>
-              <img src={img} />
+              <img src={img} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -54,7 +54,7 @@ const SwiperCard = () => {
         >
           {productId.images?.map((img) => (
             <SwiperSlide>
-              <img src={img} />
+              <img src={img} alt="" />
             </SwiperSlide>
           ))}
         </Swiper>

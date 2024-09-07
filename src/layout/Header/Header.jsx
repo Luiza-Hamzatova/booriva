@@ -7,7 +7,7 @@ import Menu from "./Menu/Menu";
 
 import styles from "./Header.module.sass";
 
-const Header = ({ setIsBasketOpen }) => {
+const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.headerContent}>
@@ -18,7 +18,7 @@ const Header = ({ setIsBasketOpen }) => {
             <div className={styles.rightCol}>
               <Search />
               <Wishlist />
-              <Cart setIsBasketOpen={setIsBasketOpen} />
+              <Cart />
             </div>
           </div>
           <div className={styles.bottomRow}>

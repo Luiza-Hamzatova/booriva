@@ -6,14 +6,13 @@ import HomePage from "./pages/homePage";
 import Wishlist from "./pages/Wishlist";
 import CardProductPage from "./pages/cardProductPage";
 import Basket from "./layout/Basket/Basket";
-import { useState } from "react";
+import { useEffect } from "react";
 
 const App = () => {
-  const [isBasketOpen, setIsBasketOpen] = useState(true);
   return (
     <div>
-      <Header setIsBasketOpen={setIsBasketOpen} />
-      <Basket isBasketOpen={isBasketOpen} setIsBasketOpen={setIsBasketOpen} />
+      <Header />
+      <Basket />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />

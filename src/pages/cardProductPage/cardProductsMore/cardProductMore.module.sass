@@ -6,78 +6,71 @@
         gap: 60px
     @media (max-width: 930px)
         gap: 30px
-    &__img
-        position: relative
-        width: 463px
-        height: 609px
-        padding: 5px
+.info
+    width: 471px
+    @media (max-width: 1182px)
+        width: 327px
+
+.name
+    font-size: 36px
+    font-weight: 600
+    @media (max-width: 1182px)
+        font-size: 25px
+    @media (max-width: 480px)
+        font-size: 12px
+    @media (max-width: 320px)
+        font-size: 10px
+        max-width: 70%
+
+.price
+    margin-top: 10px
+    color: rgba(253, 163, 196, 1)
+    font-size: 42px
+    font-weight: 700
+    @media (max-width: 1182px)
+        font-size: 35px
+    @media (max-width: 480px)
+        font-size: 14px
+    @media (max-width: 320px)
+        font-size: 10px
+.size
+    margin-top: 10px
+    margin-bottom: 20px
+    font-style: italic
+.flex
+    margin-top: 10px
+    display: flex
+    justify-content: space-between
+    h3
+        padding: 7px 0
         cursor: pointer
-    &_line
-        background: rgba(253, 163, 196, 1)
-        height: 2px
-        width: 92%
-    &__info
-        width: 471px
+        font-size: 20px
+        border-top: solid 1px black
+        border-bottom: solid 1px black
         @media (max-width: 1182px)
-            width: 327px
+            font-size: 16px
+    .active
+        color: rgba(253, 163, 196, 1)
+        border-color: rgba(253, 163, 196, 1)
 
-        &_name
-            font-size: 36px
-            font-weight: 600
-            @media (max-width: 1182px)
-                font-size: 25px
-            @media (max-width: 480px)
-                font-size: 12px
-            @media (max-width: 320px)
-                font-size: 10px
-                max-width: 70%
-
-        &_price
-            margin-top: 10px
-            color: rgba(253, 163, 196, 1)
-            font-size: 42px
-            font-weight: 700
-
-            @media (max-width: 1182px)
-                font-size: 35px
-            @media (max-width: 480px)
-                font-size: 14px
-            @media (max-width: 320px)
-                font-size: 10px
-        &_size
-            margin-top: 10px
-            margin-bottom: 20px
-            font-style: italic
-            .flex
-                margin-top: 10px
-                display: flex
-                justify-content: space-between
-            h3
-                padding: 7px 0
-                font-size: 20px
-                border-top: solid 1px black
-                border-bottom: solid 1px black
-                @media (max-width: 1182px)
-                    font-size: 16px
-
-        &_desc
-            line-height: 17px
-            border-bottom: 1px dotted rgba(253, 163, 196, 1)
-            padding-bottom: 13px
-            margin-top: 30px
-            margin-bottom: 13px
-            font-size: 14px
-        &_details
-            font-size: 14px
-            span
-                text-transform: uppercase
-                font-weight: 600
-        &_button
-            width: 220px
-            height: 55px
-            @media (max-width: 1182px)
-                width: 220px
-                height: 55px
+.desc
+    line-height: 17px
+    border-bottom: 1px dotted rgba(253, 163, 196, 1)
+    padding-bottom: 13px
+    margin-top: 30px
+    margin-bottom: 13px
+    font-size: 14px
+.details
+    font-size: 14px
+    span
+        text-transform: uppercase
+        font-weight: 600
+.button
+    width: 220px
+    height: 55px
+    @media (max-width: 1182px)
+        width: 220px
+        height: 55px
 
 .favoriteSvg
     position: absolute

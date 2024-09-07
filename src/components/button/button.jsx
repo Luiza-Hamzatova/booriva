@@ -2,9 +2,9 @@ import ButtonSvg from "./../../assets/svg/buttonSvg";
 
 import styles from "./button.module.sass";
 
-const Button = ({ value }) => {
+const Button = ({ value, onClick }) => {
   return (
-    <div className={styles.button}>
+    <div className={styles.button} onClick={onClick}>
       <div className={styles.bg}>
         <ButtonSvg />
       </div>
