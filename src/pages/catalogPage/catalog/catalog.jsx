@@ -39,6 +39,7 @@ const Catalog = () => {
       }
     }
   }, [location]);
+  console.log(products);
 
   return (
     <div className="wrapper">
