@@ -45,10 +45,8 @@ const Catalog = () => {
     <div className="wrapper">
       <div className={styles.catalog}>
         <div className={styles.catalog__Up}>
-          {/* Название каталога и категории */}
-          <div className={styles.calalog_title}>
-            <Title valueh1={menuName} valueh2={categoryName} />
-          </div>
+          <Title valueh1={menuName} valueh2={categoryName} />
+
           <img
             className={styles.catalog__Up_img}
             src="./img/catalog/catalog.png"

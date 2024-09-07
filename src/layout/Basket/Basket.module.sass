@@ -27,15 +27,173 @@
 
 .basket
     height: 100vh
-    width: 518px
+    width: 525px
     background-color: #fff
     position: absolute
     z-index: 8
     right: 0
     top: 0
+    display: flex
+    flex-direction: column
+    align-items: center
+    padding: 30px 15px 50px 
     transition: .3s linear
     &_open
         transform: translateX(0)
     &_close
         opacity: 0
         transform: translateX(100%)
+
+.closeBtn
+  align-self: end
+  margin-bottom: 20px
+  cursor: pointer
+  svg
+    width: 24px
+    height: 24px
+    stroke: var(--umbra)
+    transition: all 0.3s ease
+    @media (min-width: 480px)
+      width: 36px
+      height: 36px
+    @media (min-width: 768px)
+      width: 46px
+      height: 46px
+    &:hover
+      stroke: var(--taffy-pink)
+
+.title
+  font-size: 16px
+  text-transform: uppercase
+  margin-bottom: 52px
+  @media (min-width: 768px)
+    font-size: 28px
+    margin-bottom: 85px
+.icon
+  margin-bottom: 35px
+  svg
+    width: 220px
+    height: 130px
+    @media (min-width: 768px)
+      width: 250px
+      height: 150px
+
+.text
+  text-align: center
+  font-size: 12px
+  font-weight: 400
+  margin-bottom: 20px
+  @media (min-width: 768px)
+    font-size: 18px
+
+.svgButton
+  display: flex
+  align-items: center
+  justify-content: center
+  position: relative
+  transition: all 0.3s ease
+  svg
+  width: 175px
+  height: 50px
+  path
+    fill: var(--taffy-pink)
+  @media (min-width: 768px)
+    width: 200px
+    height: 50px
+
+.svgButton:active svg path
+  fill: var(--red)
+
+.buttonText
+  color: var(--white)
+  font-family: var(--secondary-ff)
+  font-size: 12px
+  position: absolute
+  top: 44%
+  left: 48%
+  transform: translate(-50%, -50%)
+  @media (min-width: 768px)
+    font-size: 14px
+    left: 47%
+  @media (min-width: 1000px)
+    top: 45%
+    left: 46%
+  @media (min-width: 1440px)
+    left: 47%
+
+
+
+//стили для заполененной корзины//
+
+.products
+  display: flex
+  flex-direction: column
+  gap: 10px
+  overflow-y: scroll
+  height: 255px
+  margin-top: 20px
+  margin-bottom: 40px
+  @media (min-width: 480px)
+    height: 400px
+    margin-top: 25px
+    margin-bottom: 50px
+  @media (min-width: 1000px)
+    height: 300px
+    margin-top: 40px
+    margin-bottom: 40px
+
+.products::-webkit-scrollbar
+  width: 3px
+  background-color: transparent
+
+.products::-webkit-scrollbar-track
+  border: 1px solid var(--white)
+  background-color: var(--lightpink)
+
+.products::-webkit-scrollbar-thumb
+  background-color: var(--taffy-pink)
+  border-radius: 4px
+
+.orderPrice
+  color: var(--taffy-pink)
+  display: flex
+  justify-content: space-between
+  position: relative
+  overflow: hidden
+  margin-bottom: 30px
+  margin-top:20px
+  &::after
+    position: absolute
+    content: ' . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+    left: 120px
+    white-space: nowrap
+    z-index: -1
+    @media (min-width: 768px)
+      left: 188px
+  @media (min-width: 768px)
+    color: var(--black)
+    font-size: 25px
+    margin-bottom: 40px
+  @media (min-width: 1000px)
+    margin-bottom: 50px
+
+.pink
+  font-family: Montserrat
+  font-size: 16px
+  font-weight: 400
+  line-height: 19.5px
+  color: #FDA3C4
+  display: flex
+  justify-content: space-between
+  position: relative
+  overflow: hidden
+  &::after
+    position: absolute
+    content: ' . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . '
+    left: 120px
+    white-space: nowrap
+    z-index: -1
+.price
+    background-color: var(--white)
+    padding-left: 5px
+    font-weight: bold
