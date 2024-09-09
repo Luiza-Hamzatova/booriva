@@ -1,4 +1,4 @@
-import Contact from "../../components/Contact/contact";
+import Contact from "../../components/contact/contact";
 import Footer from "../../layout/Footer/Footer";
 import Header from "../../layout/Header/Header";
 import Catalog from "./catalog/catalog";

@@ -51,6 +51,7 @@ const SwiperCard = () => {
           pagination={true}
           modules={[FreeMode, Thumbs, Pagination]}
           className={styles.swiper1}
+          spaceBetween={20}
         >
           {productId.images?.map((img) => (
             <SwiperSlide>

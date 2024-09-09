@@ -1,15 +1,13 @@
 import styles from "./deliveryTerms.module.sass";
-import FavoriteSvg from "../../../assets/svg/favoriteSvg";
-import Button from "../../../components/button/button";
 
-const deliveryTerms = ({ id, price, name, img, isFavorite, desc, details }) => {
+const deliveryTerms = () => {
   return (
     <div className={styles.deliveryTerms}>
       <div className={styles.flex}>
         <div className={styles.deliveryTerms__info}>
           <img
             className={styles.deliveryTerms__img}
-            src="./img/deliveryTerms/deliveryTerms1.svg"
+            src="./img/deliveryTerms/deliveryTerms1.png"
             alt=""
           />
           <div>
@@ -20,7 +18,7 @@ const deliveryTerms = ({ id, price, name, img, isFavorite, desc, details }) => {
         <div className={styles.deliveryTerms__info}>
           <img
             className={styles.deliveryTerms__img}
-            src="./img/deliveryTerms/deliveryTerms2.svg"
+            src="./img/deliveryTerms/deliveryTerms2.png"
             alt=""
           />
           <div>
@@ -33,7 +31,7 @@ const deliveryTerms = ({ id, price, name, img, isFavorite, desc, details }) => {
       <div className={styles.deliveryTerms__info}>
         <img
           className={styles.deliveryTerms__img3}
-          src="./img/deliveryTerms/deliveryTerms3.svg"
+          src="./img/deliveryTerms/deliveryTerms3.png"
           alt=""
         />
         <div>
