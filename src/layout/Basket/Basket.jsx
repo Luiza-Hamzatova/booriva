@@ -100,10 +100,10 @@ const Basket = () => {
             <Link
               to={`catalog?menuId=001`}
               className={styles.svgButton}
-              onClick={() => setIsBasketOpen(false)}
+              onClick={() => dispatch(setIsBasketOpen(false))}
             >
               <StartShoppingBtnBg />
-              <span className={styles.buttonText}>За покупками</span>
+              <span className={styles.buttonText} >За покупками</span>
             </Link>
           </div>
         )}

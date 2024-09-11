@@ -1,27 +1,13 @@
 .cardProduct
+    background: var(--white)
     position: relative
-    width: 360px
-    height: 530px
-    padding: 5px
     cursor: pointer
-    margin-bottom: 20px
-    @media (max-width: 1182px)
-        width: 250px
-        height: 366px
-    @media (max-width: 768px)
-        width: 225px
-    @media (max-width: 640px)
-        width: 50%
-        height: 322px
-    @media (max-width: 320px)
-        height: 200px
-    &__img
+   
+    &__img img
+        display: block
         width: 100%
-        height: 90%
-        & img
-            height: 100%
-            object-fit: cover
-            width: 100%
+        height: auto
+        object-fit: cover
     &_line
         background: rgba(253, 163, 196, 1)
         height: 2px
@@ -29,52 +15,64 @@
     &__title
         display: flex
         justify-content: space-between
-        align-items: center
-        margin: 15px 15px
-
-        @media (max-width: 1182px)
-            padding: 10px 10px
-            margin: 5px 10px
-        @media (max-width: 480px)
-            margin-top: 10px
+        gap: 6px
+        padding: 8px 0
+        border-top: 1px solid var(--taffy-pink)
+        @media (min-width: 480px)
+            gap: 10px
+            padding: 10px 0
+        @media (min-width: 768px)
+            padding: 14px 0
+            border-top: 2px solid var(--taffy-pink)
+        @media (min-width: 1440px)
+            padding: 25px 0
         &_name
-            max-width: 60%
-            font-size: 16px
+            color: var(--umbra)
+            font-size: 10px
             font-weight: 400
-            @media (max-width: 1182px)
-                font-size: 14px
-            @media (max-width: 480px)
+            @media (min-width: 480px)
                 font-size: 12px
-            @media (max-width: 320px)
-                font-size: 10px
-                max-width: 70%
-
-        &_price
-            color: rgba(253, 163, 196, 1)
-            font-size: 24px
-            font-weight: 700
-            @media (max-width: 1182px)
-                font-size: 16px
-            @media (max-width: 480px)
+            @media (min-width: 768px)
                 font-size: 14px
-            @media (max-width: 320px)
-                font-size: 10px
+            @media (min-width: 1440px)
+                font-size: 16px
+        &_price
+            color: var(--taffy-pink)
+            font-size: 10px
+            font-weight: var(--bold-fw)
+            white-space: nowrap
+            @media (min-width: 480px)
+                font-size: 14px
+            @media (min-width: 768px)
+                font-size: 16px
+            @media (min-width: 1440px)
+                font-size: 24px
 
 .favoriteSvg
     position: absolute
-    right: 20px
-    top: 20px
-    display: flex
-    justify-content: flex-end
-    width: 26px
-    @media (max-width: 1182px)
-        width: 24px
-    @media (max-width: 480px)
-        width: 22px
-    @media (max-width: 360px)
-
+    top: 10px
+    right: 10px
+    cursor: pointer
+    @media (min-width: 480px)
+        top: 15px
+        right: 15px
+    @media (min-width: 768px)
+        top: 20px
+        right: 20px
+    svg
+        width: 14px
+        height: 12px
+        transition: all 1s ease
+        @media (min-width: 480px)
+            width: 20px
+            height: 18px
+        @media (min-width: 768px)
+            width: 22px
+            height: 20px
+        @media (min-width: 1440px)
+            width: 26px
+            height: 24px
     &:hover svg, &_active
-        fill: var(--red)
         fill: var(--red)
 
 .cardProduct.catalog
