@@ -23,15 +23,15 @@ const Basket = () => {
       setCart(JSON.parse(localStorage.getItem("cart")));
     }
   }, [isBasketOpen]);
-  const deleteCart = (productId, productSize) => {
-    dispatch(
-      setCartBasket(
-        cart.filter(
-          (product) => !((product.id === cart.id) & (product.size === cart.size))
-        )
-      )
-    );
-  };
+  // const deleteCart = (productId, productSize) => {
+  //   dispatch(
+  //     setCartBasket(
+  //       cart.filter(
+  //         (product) => !((product.id === cart.id) & (product.size === cart.size))
+  //       )
+  //     )
+  //   );
+  // };
   return (
     <div
       className={
@@ -70,7 +70,7 @@ const Basket = () => {
                   name={product.name}
                   size={size}
                   price={product.price}
-                  deleteCart={deleteCart}
+                  // deleteCart={deleteCart}
                 />
               ))}
             </div>
