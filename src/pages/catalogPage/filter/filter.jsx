@@ -20,7 +20,6 @@ const Filter = () => {
         setCategories(res.categories);
       });
   }, [params.menuId]);
-  console.log(price);
   return (
     <div className={styles.filter}>
       {categories && categories.length > 0 && (

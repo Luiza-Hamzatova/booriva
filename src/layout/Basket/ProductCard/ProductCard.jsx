@@ -3,8 +3,8 @@ import DeleteBtn from "../../../assets/svg/DeleteBtn";
 import styles from "./ProductCard.module.sass";
 
 const ProductCard = ({ id,images, name, size, price, removeFromCart }) => {
-  const handleRemoveFromCart = () => {
-    removeFromCart(id, size);
+  const deleteCart = () => {
+    deleteCart(id, size);
   };
   return (
     <div className={styles.productCard}>
@@ -16,7 +16,7 @@ const ProductCard = ({ id,images, name, size, price, removeFromCart }) => {
         <p className={styles.productSize}>{size}</p>
         <p className={styles.productPrice}>{price};</p>
       </div>
-      <div className={styles.deleteProductBtn} onClick={handleRemoveFromCart}>
+      <div className={styles.deleteProductBtn} onClick={deleteCart}>
         <DeleteBtn />
       </div>
     </div>

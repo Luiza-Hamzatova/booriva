@@ -23,13 +23,11 @@ const Basket = () => {
       setCart(JSON.parse(localStorage.getItem("cart")));
     }
   }, [isBasketOpen]);
-  console.log(cart);
-  const removeFromCart = (productId, size) => {
+  const deleteCart = (productId, productSize) => {
     dispatch(
       setCartBasket(
         cart.filter(
-          (product) =>
-            !(product.id === productId && product.selectedSize === size)
+          (product) => !((product.id === cart.id) & (product.size === cart.size))
         )
       )
     );
@@ -72,7 +70,7 @@ const Basket = () => {
                   name={product.name}
                   size={size}
                   price={product.price}
-                  removeFromCart={removeFromCart}
+                  deleteCart={deleteCart}
                 />
               ))}
             </div>
