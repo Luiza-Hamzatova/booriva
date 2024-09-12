@@ -1,11 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
-
 import DeleteBtn from "../../../assets/svg/DeleteBtn";
 
 import styles from "./ProductCard.module.sass";
 
-const ProductCard = ({images, name, size, price }) => {
+const ProductCard = ({ id,images, name, size, price, removeFromCart }) => {
+  const handleRemoveFromCart = () => {
+    removeFromCart(id, size);
+  };
   return (
     <div className={styles.productCard}>
       <div className={styles.productImg}>
@@ -16,7 +16,7 @@ const ProductCard = ({images, name, size, price }) => {
         <p className={styles.productSize}>{size}</p>
         <p className={styles.productPrice}>{price};</p>
       </div>
-      <div className={styles.deleteProductBtn}>
+      <div className={styles.deleteProductBtn} onClick={handleRemoveFromCart}>
         <DeleteBtn />
       </div>
     </div>

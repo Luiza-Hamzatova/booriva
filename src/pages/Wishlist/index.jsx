@@ -29,6 +29,7 @@ const Wishlist = () => {
       </div>
       <Delivery />
       <Contact />
+    
     </div>
   );
 };

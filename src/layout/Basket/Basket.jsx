@@ -1,6 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
-
+import { useDispatch, useSelector } from "react-redux";
+import { setCartBasket } from "../../redux/cart/cartSlice";
 import CloseCartBtn from "../../assets/svg/CloseBtn";
 import CatInTheBag from "../../assets/svg/CatInTheBag";
 import StartShoppingBtnBg from "../../assets/svg/StartShoppingBtnBg";
@@ -9,20 +10,30 @@ import PlaceAnOrderBtnBg from "../../assets/svg/PlaceAnOrderBtnBg";
 import styles from "./Basket.module.sass";
 import ProductCard from "./ProductCard/ProductCard";
 import Button from "../../components/button/button";
-import { useDispatch, useSelector } from "react-redux";
 import { setIsBasketOpen } from "../../redux/basketSlice/basketSlice";
 
 const Basket = () => {
   const [cart, setCart] = useState([]);
+  const cartBasket = useSelector((state) => state.cart.cartBasket);
   const isBasketOpen = useSelector((state) => state.basket.isBasketOpen);
   const dispatch = useDispatch();
+
   useEffect(() => {
     if (localStorage.getItem("cart")) {
       setCart(JSON.parse(localStorage.getItem("cart")));
     }
   }, [isBasketOpen]);
   console.log(cart);
-
+  const removeFromCart = (productId, size) => {
+    dispatch(
+      setCartBasket(
+        cart.filter(
+          (product) =>
+            !(product.id === productId && product.selectedSize === size)
+        )
+      )
+    );
+  };
   return (
     <div
       className={
@@ -61,6 +72,7 @@ const Basket = () => {
                   name={product.name}
                   size={size}
                   price={product.price}
+                  removeFromCart={removeFromCart}
                 />
               ))}
             </div>
@@ -103,7 +115,7 @@ const Basket = () => {
               onClick={() => dispatch(setIsBasketOpen(false))}
             >
               <StartShoppingBtnBg />
-              <span className={styles.buttonText} >За покупками</span>
+              <span className={styles.buttonText}>За покупками</span>
             </Link>
           </div>
         )}
