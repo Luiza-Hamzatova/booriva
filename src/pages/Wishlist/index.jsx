@@ -2,13 +2,22 @@ import EmptyWishlist from "./EmptyWishlist/EmptyWishlist";
 import CardProduct from "../../components/cardProduct/cardProduct";
 import styles from "./index.module.sass";
 import Delivery from "../../components/delivery/delivery";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Contact from "../../components/contact/contact";
-const Wishlist = () => {
-  const [products, setProducts] = useState([]);
-  if (products && products.length > 0) {
-  }
 
+import { useDispatch, useSelector } from "react-redux";
+import { setIsFavorite } from "../../redux/wishListSlice/wishListSlice";
+
+const Wishlist = () => {
+  const [cart, setCart] = useState([]);
+  const isFavorite = useSelector((state) => state.wishlist.isFavorite);
+
+  useEffect(() => {
+    if (localStorage.getItem("cart")) {
+      setCart(JSON.parse(localStorage.getItem("cart")));
+    }
+  }, [isFavorite]);
+  console.log(cart);
   return (
     <div>
       <div className={styles.wishlist}>
@@ -17,10 +26,16 @@ const Wishlist = () => {
           <p className={styles.subtitle}>твой тайный Список желаний</p>
         </div>
         <div>
-          {products.length > 0 ? (
+          {cart.length > 0 ? (
             <div className={styles.cards}>
-              {" "}
-              <CardProduct />
+              {cart.map(({ isFavorite, cart }) => (
+                <CardProduct
+                  id={cart.id}
+                  images={cart.images}
+                  name={cart.name}
+                  isFavorite={isFavorite}
+                />
+              ))}
             </div>
           ) : (
             <EmptyWishlist />

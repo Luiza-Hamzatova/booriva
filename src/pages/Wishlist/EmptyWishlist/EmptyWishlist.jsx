@@ -6,7 +6,6 @@ import EmptyWishlistIcon from "../../../assets/svg/EmptyWishlistIcon";
 import styles from "./EmptyWishlist.module.sass";
 
 const EmptyWishlist = () => {
-  
   return (
     <div className={styles.emptyWishlist}>
       <div className={styles.icon}>

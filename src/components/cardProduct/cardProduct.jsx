@@ -2,8 +2,42 @@ import { Link } from "react-router-dom";
 import FavoriteSvg from "./../../assets/svg/favoriteSvg";
 
 import styles from "./cardProduct.module.sass";
+import React, { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import qs from "qs";
+import { useDispatch, useSelector } from "react-redux";
+import { setIsFavorite } from "../../redux/wishListSlice/wishListSlice";
 
 const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
+  const dispatch = useDispatch();
+  const [product, setProduct] = useState([]);
+  const isFavorite = useSelector((state) => state.wishlist.isFavorite);
+  const location = useLocation();
+
+  useEffect(() => {
+    const productId = qs.parse(location.search.substring(1)).id;
+
+    fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${productId}`)
+      .then((res) => res.json())
+      .then((res) => setProduct(res));
+  }, [location]);
+
+  const addProductToCart = () => {
+    const cart = localStorage.getItem("cart")
+      ? JSON.parse(localStorage.getItem("cart"))
+      : [];
+
+    cart.push({
+      isFavorite: isFavorite,
+      cart: product,
+    });
+    localStorage.setItem("cart", JSON.stringify(cart));
+  };
+
+  const isFavoriteClick = () => {
+    addProductToCart;
+    dispatch(setIsFavorite(true));
+  };
   return (
     <Link
       to={`/product?id=${id}`}
@@ -17,7 +51,7 @@ const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
           (isFavorite === true ? " " + styles.favoriteSvg_active : "")
         }
       >
-        <FavoriteSvg />
+        <FavoriteSvg onclick={isFavoriteClick} />
       </div>
       <div className={styles.cardProduct__img}>
         <img src={img} alt="" />
