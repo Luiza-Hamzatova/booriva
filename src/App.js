@@ -7,8 +7,14 @@ import Wishlist from "./pages/Wishlist";
 import CardProductPage from "./pages/cardProductPage";
 import Basket from "./layout/Basket/Basket";
 import NavigationBar from "./components/NavigationBar";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 const App = () => {
+  const cart = useSelector((state) => state.basket.cart);
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cart));
+  }, [cart]);
   return (
     <div>
       <Header />

@@ -13,25 +13,10 @@ import Button from "../../components/button/button";
 import { setIsBasketOpen } from "../../redux/basketSlice/basketSlice";
 
 const Basket = () => {
-  const [cart, setCart] = useState([]);
-  const cartBasket = useSelector((state) => state.cart.cartBasket);
+  const cart = useSelector((state) => state.basket.cart);
   const isBasketOpen = useSelector((state) => state.basket.isBasketOpen);
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (localStorage.getItem("cart")) {
-      setCart(JSON.parse(localStorage.getItem("cart")));
-    }
-  }, [isBasketOpen]);
-  // const deleteCart = (productId, productSize) => {
-  //   dispatch(
-  //     setCartBasket(
-  //       cart.filter(
-  //         (product) => !((product.id === cart.id) & (product.size === cart.size))
-  //       )
-  //     )
-  //   );
-  // };
   return (
     <div
       className={
@@ -64,12 +49,12 @@ const Basket = () => {
             <div className={styles.products}>
               {cart.map(({ size, product }) => (
                 <ProductCard
-                  key={product.id + product.size}
-                  id={product.id}
-                  images={product.images}
-                  name={product.name}
+                  key={product?.id + product?.size}
+                  id={product?.id}
+                  images={product?.images}
+                  name={product?.name}
                   size={size}
-                  price={product.price}
+                  price={product?.price}
                   // deleteCart={deleteCart}
                 />
               ))}

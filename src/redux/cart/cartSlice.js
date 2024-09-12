@@ -10,8 +10,10 @@ export const cartSlice = createSlice({
   reducers: {
     setCartBasket(state, { payload }) {
       state.cartBasket = payload;
-      localStorage.setItem("arrOfCartProducts", JSON.stringify(state.cartBasket));
-      console.log("Updated Cart:", state.cartBasket);
+      localStorage.setItem(
+        "arrOfCartProducts",
+        JSON.stringify(state.cartBasket)
+      );
     },
   },
 });

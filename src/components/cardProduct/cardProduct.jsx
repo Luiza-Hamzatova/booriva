@@ -8,10 +8,10 @@ import qs from "qs";
 import { useDispatch, useSelector } from "react-redux";
 import { setIsFavorite } from "../../redux/wishListSlice/wishListSlice";
 
-const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
+const CardProduct = ({ id, price, name, img, isFavoriteItem, type }) => {
   const dispatch = useDispatch();
   const [product, setProduct] = useState([]);
-  const isFavorite = useSelector((state) => state.wishlist.isFavorite);
+  const isFavorite = useSelector((state) => state.wishList.isFavorite);
   const location = useLocation();
 
   useEffect(() => {
@@ -28,14 +28,14 @@ const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
       : [];
 
     cart.push({
-      isFavorite: isFavorite,
+      isFavoriteItem: isFavoriteItem,
       cart: product,
     });
     localStorage.setItem("cart", JSON.stringify(cart));
   };
 
   const isFavoriteClick = () => {
-    addProductToCart;
+    addProductToCart();
     dispatch(setIsFavorite(true));
   };
   return (

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import qs from "qs";
+import { useDispatch, useSelector } from "react-redux";
+import { setCart } from "../../../redux/basketSlice/basketSlice";
 
 import Button from "../../../components/button/button";
 import SwiperCard from "./swiperCard/swiperCard";
@@ -10,8 +12,10 @@ import styles from "./cardProductMore.module.sass";
 const CardProductMore = () => {
   const [product, setProduct] = useState([]);
   const [activeSize, setActiveSize] = useState("XS — S");
+  const cart = useSelector((state) => state.basket.cart);
+  const [message, setMessage] = useState("");
   const location = useLocation();
-
+  const dispatch = useDispatch();
   useEffect(() => {
     const productId = qs.parse(location.search.substring(1)).id;
 
@@ -21,15 +25,24 @@ const CardProductMore = () => {
   }, [location]);
 
   const addProductToCart = () => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-
-    cart.push({
-      size: activeSize,
-      product: product,
-    });
-    localStorage.setItem("cart", JSON.stringify(cart));
+    if (
+      cart.every(
+        (item) => item.size !== activeSize || item.product.id !== product.id
+      )
+    ) {
+      setMessage("Товар добавлен в корзину!");
+      dispatch(
+        setCart([
+          ...cart,
+          {
+            size: activeSize,
+            product: product,
+          },
+        ])
+      );
+    } else {
+      setMessage("Такой товар уже есть в корзине!");
+    }
   };
 
   return (
@@ -59,6 +72,7 @@ const CardProductMore = () => {
             </div>
           </div>
           <div className={styles.button}>
+            {message}
             <Button value={"в корзину"} onClick={addProductToCart} />
           </div>
           <div className={styles.desc}>{product.desc}</div>

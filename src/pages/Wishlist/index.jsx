@@ -17,7 +17,7 @@ const Wishlist = () => {
       setCart(JSON.parse(localStorage.getItem("cart")));
     }
   }, [isFavorite]);
-  console.log(cart);
+
   return (
     <div>
       <div className={styles.wishlist}>
@@ -33,7 +33,8 @@ const Wishlist = () => {
                   id={cart.id}
                   images={cart.images}
                   name={cart.name}
-                  isFavorite={isFavorite}
+                  isFavoriteItem={isFavorite}
+                  key={cart.id}
                 />
               ))}
             </div>
@@ -44,7 +45,6 @@ const Wishlist = () => {
       </div>
       <Delivery />
       <Contact />
-    
     </div>
   );
 };

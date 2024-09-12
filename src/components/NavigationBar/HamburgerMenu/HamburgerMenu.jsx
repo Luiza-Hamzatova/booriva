@@ -1,5 +1,3 @@
-import classNames from "classnames";
-
 import Hamburger from "../../../assets/svg/Hamburger";
 
 import styles from "./HamburgerMenu.module.sass";
