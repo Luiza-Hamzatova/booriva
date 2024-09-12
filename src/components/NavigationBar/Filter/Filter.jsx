@@ -1,20 +1,10 @@
-import classNames from "classnames";
-
-import FilterIcon from "../../../assets/icons/Filter";
+import FilterIcon from "../../../assets/svg/Filter";
 
 import styles from "./Filter.module.sass";
 
-const Filter = ({ isMobileFilterOpen, handleMobileFilterOpen }) => {
-  const filterClasses = classNames(styles.filter, {
-    [styles.active]: isMobileFilterOpen,
-  });
+const Filter = () => {
   return (
-    <div
-      className={filterClasses}
-      onClick={() => {
-        handleMobileFilterOpen();
-      }}
-    >
+    <div className={styles.filter}>
       <FilterIcon />
       Фильтр
     </div>

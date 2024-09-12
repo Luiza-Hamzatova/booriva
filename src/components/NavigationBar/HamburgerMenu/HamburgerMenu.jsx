@@ -1,20 +1,12 @@
 import classNames from "classnames";
 
-import Hamburger from "../../../assets/icons/Hamburger";
+import Hamburger from "../../../assets/svg/Hamburger";
 
 import styles from "./HamburgerMenu.module.sass";
 
-const HamburgerMenu = ({ isMobileMenuOpen, handleMobileMenuOpen }) => {
-  const hamburgerClasses = classNames(styles.navigationBarItem, {
-    [styles.active]: isMobileMenuOpen,
-  });
+const HamburgerMenu = () => {
   return (
-    <div
-      className={hamburgerClasses}
-      onClick={() => {
-        handleMobileMenuOpen();
-      }}
-    >
+    <div className={styles.navigationBarItem}>
       <Hamburger />
       Меню
     </div>

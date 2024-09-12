@@ -1,20 +1,10 @@
-import classNames from "classnames";
-
-import CartIcon from "../../../assets/icons/Cart";
+import CartIcon from "../../../assets/svg/Cart";
 
 import styles from "./Cart.module.sass";
 
-const Cart = ({ isCartOpen, handleCartOpen }) => {
-  const cartClasses = classNames(styles.navigationBarItem, {
-    [styles.active]: isCartOpen,
-  });
+const Cart = () => {
   return (
-    <div
-      className={cartClasses}
-      onClick={() => {
-        handleCartOpen();
-      }}
-    >
+    <div className={styles.navigationBarItem}>
       <CartIcon />
       Корзина
     </div>

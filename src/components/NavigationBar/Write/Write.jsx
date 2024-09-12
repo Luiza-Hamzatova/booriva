@@ -1,4 +1,4 @@
-import Telegram from "../../../assets/icons/Telegram";
+import Telegram from "../../../assets/svg/Telegram";
 
 import styles from "./Write.module.sass";
 

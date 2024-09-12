@@ -4,7 +4,7 @@ import styles from "./newColection.module.sass";
 const NewColection = () => {
   return (
     <div>
-      <div className={styles.newColection}>
+      <div className={styles.newColection + " wrapper"}>
         <div className={styles.newColection__Left}>
           <div className={styles.newColection__tshirts}>
             <img src="./img/newColection/футболки.png" alt="" />

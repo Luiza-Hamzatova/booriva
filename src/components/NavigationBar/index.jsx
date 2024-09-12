@@ -1,5 +1,3 @@
-import { useLocation } from "react-router-dom";
-
 import HamburgerMenu from "./HamburgerMenu/HamburgerMenu";
 import Write from "./Write/Write";
 import Filter from "./Filter/Filter";

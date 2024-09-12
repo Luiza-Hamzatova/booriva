@@ -6,7 +6,7 @@ import HomePage from "./pages/homePage";
 import Wishlist from "./pages/Wishlist";
 import CardProductPage from "./pages/cardProductPage";
 import Basket from "./layout/Basket/Basket";
-import { useEffect } from "react";
+import NavigationBar from "./components/NavigationBar";
 
 const App = () => {
   return (
@@ -19,7 +19,7 @@ const App = () => {
         <Route path="/wishlist" element={<Wishlist />} />
         <Route path="/product" element={<CardProductPage />} />
       </Routes>
-
+      <NavigationBar />
       <Footer />
     </div>
   );
