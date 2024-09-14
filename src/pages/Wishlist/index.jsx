@@ -1,39 +1,58 @@
+import { useDispatch, useSelector } from "react-redux";
+import { setCardWish } from "../../redux/wishListSlice/wishListSlice";
+import { useState, useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import qs from "qs";
+
 import EmptyWishlist from "./EmptyWishlist/EmptyWishlist";
 import CardProduct from "../../components/cardProduct/cardProduct";
-import styles from "./index.module.sass";
 import Delivery from "../../components/delivery/delivery";
-import { useState, useEffect } from "react";
 import Contact from "../../components/contact/contact";
+import Title from "../../components/title/title";
 
-import { useDispatch, useSelector } from "react-redux";
-import { setIsFavorite } from "../../redux/wishListSlice/wishListSlice";
+import styles from "./index.module.sass";
 
 const Wishlist = () => {
-  const [cart, setCart] = useState([]);
-  const isFavorite = useSelector((state) => state.wishlist.isFavorite);
+  const cardWish = useSelector((state) => state.wishList.cardWish);
+  const [products, setProducts] = useState([]);
+
+  const location = useLocation();
+
+  useEffect(() => {}, [location]);
 
   useEffect(() => {
-    if (localStorage.getItem("cart")) {
-      setCart(JSON.parse(localStorage.getItem("cart")));
-    }
-  }, [isFavorite]);
-  console.log(cart);
+    cardWish.map((id, isFavorite) => {
+      if (isFavorite) {
+        fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${id}`)
+          .then((res) => res.json())
+          .then((res) => setProducts(...products, res));
+      }
+    });
+  }, [location]);
+
+  console.log(products);
+  console.log(cardWish);
   return (
     <div>
       <div className={styles.wishlist}>
         <div className={styles.heading}>
-          <h1 className={styles.title}>Список желаний</h1>
-          <p className={styles.subtitle}>твой тайный Список желаний</p>
+          <Title
+            valueh1={"Список желаний"}
+            valueh2={"твой тайный Список желаний"}
+          />
         </div>
         <div>
-          {cart.length > 0 ? (
+          {products.length > 0 ? (
             <div className={styles.cards}>
-              {cart.map(({ isFavorite, cart }) => (
+              {products?.map(({ id, images, name, price, isFavorite }) => (
                 <CardProduct
-                  id={cart.id}
-                  images={cart.images}
-                  name={cart.name}
+                  img={images}
+                  id={id}
+                  key={id}
+                  price={price}
+                  name={name}
                   isFavorite={isFavorite}
+                  type={""}
                 />
               ))}
             </div>
@@ -44,7 +63,6 @@ const Wishlist = () => {
       </div>
       <Delivery />
       <Contact />
-    
     </div>
   );
 };

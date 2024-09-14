@@ -3,15 +3,19 @@ import { createSlice } from "@reduxjs/toolkit";
 export const wishListSlice = createSlice({
   name: "wishList",
   initialState: {
-    isFavorite: false,
+    cardWish: localStorage.getItem("cardWish")
+      ? JSON.parse(localStorage.getItem("cardWish"))
+      : [],
+
   },
   reducers: {
-    setIsFavorite: (state, action) => {
-      state.isFavorite = action.payload;
+    setCardWish: (state, action) => {
+      state.cardWish = action.payload;
+      localStorage.setItem("cardWish", JSON.stringify(state.cardWish));
     },
   },
 });
 
-export const { setIsFavorite } = wishListSlice.actions;
+export const { setCardWish } = wishListSlice.actions;
 
 export default wishListSlice.reducer;
