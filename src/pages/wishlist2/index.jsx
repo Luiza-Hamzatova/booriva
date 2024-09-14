@@ -15,20 +15,25 @@ import styles from "./index.module.sass";
 const Wishlist = () => {
   const cardWish = useSelector((state) => state.wishList.cardWish);
   const [products, setProducts] = useState([]);
-
-  const location = useLocation();
-
-  useEffect(() => {}, [location]);
+  const getData = (i) => {
+    fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${cardWish[i]}`)
+      .then((res) => res.json())
+      .then((res) => {
+        setProducts((prev) => [...prev, res]);
+        if (cardWish.length - 1 === i) {
+          return false;
+        } else {
+          getData(i + 1);
+        }
+      });
+  };
 
   useEffect(() => {
-    cardWish.map((id, isFavorite) => {
-      if (isFavorite) {
-        fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${id}`)
-          .then((res) => res.json())
-          .then((res) => setProducts(...products, res));
-      }
-    });
-  }, [location]);
+    setProducts([]);
+    if (cardWish.length > 0) {
+      getData(0);
+    }
+  }, [cardWish]);
 
   console.log(products);
   console.log(cardWish);
@@ -51,7 +56,7 @@ const Wishlist = () => {
                   key={id}
                   price={price}
                   name={name}
-                  isFavorite={isFavorite}
+                  isFavorite={true}
                   type={""}
                 />
               ))}

@@ -6,12 +6,11 @@ export const wishListSlice = createSlice({
     cardWish: localStorage.getItem("cardWish")
       ? JSON.parse(localStorage.getItem("cardWish"))
       : [],
-
   },
   reducers: {
     setCardWish: (state, action) => {
       state.cardWish = action.payload;
-      localStorage.setItem("cardWish", JSON.stringify(state.cardWish));
+      localStorage.setItem("cardWish", JSON.stringify(action.payload));
     },
   },
 });

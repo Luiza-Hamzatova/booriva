@@ -11,9 +11,7 @@ const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
   const cardWish = useSelector((state) => state.wishList.cardWish);
 
   const addProductToCart = () => {
-    isFavorite = !isFavorite;
-
-    dispatch(setCardWish([...cardWish, { isFavorite, id }]));
+    dispatch(setCardWish([...cardWish, id]));
   };
 
   return (
