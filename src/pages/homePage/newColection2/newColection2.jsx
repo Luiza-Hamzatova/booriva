@@ -1,5 +1,5 @@
 import Button from "../../../components/button/button";
-import styles from "./newColection.module.sass";
+import styles from "./newColection2.module.sass";
 
 const NewColection = () => {
   return (

@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import qs from "qs";
 
-import EmptyWishlist from "./EmptyWishlist/EmptyWishlist";
+import EmptyWishlist from "./emptyWishlist2/emptyWishlist2";
 import CardProduct from "../../components/cardProduct/cardProduct";
 import Delivery from "../../components/delivery/delivery";
 import Contact from "../../components/contact/contact";

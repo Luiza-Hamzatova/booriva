@@ -5,7 +5,7 @@ import qs from "qs";
 import CardProduct from "../../../components/cardProduct/cardProduct";
 import Title from "../../../components/title/title";
 import Button from "../../../components/button/button";
-import styles from "./newCatalog.module.sass";
+import styles from "./newCatalog2.module.sass";
 
 const NewCatalog = () => {
   const [products, setProducts] = useState([]);

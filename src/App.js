@@ -3,7 +3,7 @@ import Footer from "./layout/Footer/Footer";
 import Header from "./layout/Header/Header";
 import CatalogPage from "./pages/catalogPage";
 import HomePage from "./pages/homePage";
-import Wishlist from "./pages/Wishlist";
+import Wishlist from "./pages/wishlist2";
 import CardProductPage from "./pages/cardProductPage";
 import Basket from "./layout/Basket/Basket";
 import NavigationBar from "./components/NavigationBar";

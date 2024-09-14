@@ -1,4 +1,4 @@
-import styles from "./baner.module.sass";
+import styles from "./baner2.module.sass";
 const Baner = () => {
   return (
     <div className={styles.baner}>
