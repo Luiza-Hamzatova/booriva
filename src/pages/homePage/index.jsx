@@ -1,10 +1,10 @@
-import NewColection from "./NewColection/NewColection";
-import NewCatalog from "./NewCatalog/NewCatalog";
+import NewColection from "./newColection/newColection";
+import NewCatalog from "./newCatalog/newCatalog";
 import BoorivaStore from "./../../components/boorivaStore/boorivaStore";
 import Delivery from "../../components/delivery/delivery";
-import Baner from "./Baner/Baner";
+import Baner from "./baner/baner";
 import Contact from "../../components/contact/contact";
-import InfiniteMarquee from "./InfiniteMarquee/InfiniteMarquee";
+import InfiniteMarquee from "./infiniteMarquee/infiniteMarquee";
 
 const HomePage = () => {
   return (

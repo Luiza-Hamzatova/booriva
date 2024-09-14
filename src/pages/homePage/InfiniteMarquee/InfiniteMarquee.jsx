@@ -1,4 +1,4 @@
-import styles from "./InfiniteMarquee.module.sass";
+import styles from "./infiniteMarquee.module.sass";
 
 const InfiniteMarquee = () => {
   return (
