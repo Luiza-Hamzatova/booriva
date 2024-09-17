@@ -1,4 +1,4 @@
-import { setIsSearchBarOpen } from "../../../redux/searchBarSlice";
+import { setIsSearchBarOpen } from "../../../redux/searchBarSlice/searchBarSlice";
 import { useDispatch } from "react-redux";
 
 import SearchIcon from "../../../assets/svg/Search";

@@ -1,10 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 
-import { setIsSearchBarOpen } from "../../redux/searchBarSlice/searchBarSlice";
-
 import Search from "../../assets/svg/Search";
 import DeleteBtn from "../../assets/svg/DeleteBtn";
-
+import { isSearchBarOpen } from "../../redux/searchBarSlice/searchBarSlice";
 import styles from "./searchBar.module.sass";
 import { useDispatch, useSelector } from "react-redux";
 
@@ -12,7 +10,10 @@ const SearchBar = () => {
   const [value, setValue] = useState("");
   const [isInputActive, setIsInputActive] = useState(false);
   const InputRef = useRef();
-  const dispatch = useDispatch();
+
+  const isSearchBarOpen = useSelector(
+    (state) => state.searchBar.isSearchBarOpen
+  );
   const handleInputChange = (e) => {
     setValue(e.target.value);
     setIsInputActive(e.target.value !== "");
@@ -22,9 +23,7 @@ const SearchBar = () => {
     setIsInputActive(false);
     InputRef.current.focus();
   };
-  const isSearchBarOpen = useSelector(
-    (state) => state.searchBar.isSearchBarOpen
-  );
+
   useEffect(() => {
     InputRef.current.focus();
   }, [isSearchBarOpen]);
@@ -37,10 +36,7 @@ const SearchBar = () => {
         (isSearchBarOpen ? styles.activeSearchBar : "")
       }
     >
-      <div
-        className={styles.searchBar}
-        onClick={() => dispatch(setIsSearchBarOpen(false))}
-      >
+      <div className={styles.searchBar}>
         <button className={styles.searchBtn}>
           <Search />
         </button>
@@ -49,6 +45,7 @@ const SearchBar = () => {
           className={
             styles.textbox + " " + (isInputActive ? styles.active : "")
           }
+          ref={InputRef}
           placeholder="Поиск товаров"
           value={value}
           onChange={handleInputChange}
