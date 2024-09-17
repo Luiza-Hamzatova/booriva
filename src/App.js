@@ -7,6 +7,7 @@ import Wishlist from "./pages/Wishlist";
 import CardProductPage from "./pages/cardProductPage";
 import Basket from "./layout/Basket/Basket";
 import NavigationBar from "./components/NavigationBar";
+import SearchBar from "./components/searchBar/searchBar";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
 
@@ -19,6 +20,7 @@ const App = () => {
     <div>
       <Header />
       <Basket />
+      <SearchBar/>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/catalog" element={<CatalogPage />} />
@@ -26,6 +28,8 @@ const App = () => {
         <Route path="/product" element={<CardProductPage />} />
       </Routes>
       <NavigationBar />
+     
+      
       <Footer />
     </div>
   );
