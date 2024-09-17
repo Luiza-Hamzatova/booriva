@@ -35,8 +35,6 @@ const Wishlist = () => {
     }
   }, [cardWish]);
 
-  console.log(products);
-  console.log(cardWish);
   return (
     <div>
       <div className={styles.wishlist}>
@@ -49,7 +47,7 @@ const Wishlist = () => {
         <div>
           {products.length > 0 ? (
             <div className={styles.cards}>
-              {products?.map(({ id, images, name, price, isFavorite }) => (
+              {products?.map(({ id, images, name, price }) => (
                 <CardProduct
                   img={images}
                   id={id}

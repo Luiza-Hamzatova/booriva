@@ -11,7 +11,10 @@ const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
   const cardWish = useSelector((state) => state.wishList.cardWish);
 
   const addProductToCart = () => {
-    dispatch(setCardWish([...cardWish, id]));
+    if (isFavorite !== true) {
+      dispatch(setCardWish([...cardWish, id]));
+    } else {
+    }
   };
 
   return (
@@ -29,7 +32,7 @@ const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
       >
         <FavoriteSvg />
       </div>
-      <Link to={`/product?id=${id}`}>
+      <Link className={styles.link} to={`/product?id=${id}`}>
         <div className={styles.cardProduct__img}>
           <img src={img} alt="" />
 

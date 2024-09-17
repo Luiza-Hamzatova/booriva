@@ -75,5 +75,20 @@
     fill: var(--red)
 
 .cardProduct.catalog
-    object-fit: cover
-    margin-bottom: 2vh
+
+    margin-bottom: 10px
+    width: 50%
+    height: 600px
+
+    @media (max-width: 1182px)
+        width: 250px
+        height: 366px
+    @media (max-width: 768px)
+        width: 250px
+    @media (max-width: 640px)
+        width: 50%
+        height: 300px
+        margin: 0
+.link
+    display: block
+    height: 100%

@@ -42,7 +42,7 @@
     width: 559px
     gap: 20px
     display: flex
-
+    position: relative
     @media (max-width: 1182px)
         width: 502px
         height: 524px
@@ -59,10 +59,26 @@
     @media (max-width: 930px)
         width: 361px
     @media (max-width: 480px)
-        height: 380px
+        height: auto
         width: 100%
     img
         width: 100%
         height: 100%
         object-fit: cover
         object-position: center
+
+.favoriteSvg
+    position: absolute
+    right: 20px
+    top: 10px
+    z-index: 10
+    @media (max-width: 1182px)
+        width: 24px
+    @media (max-width: 480px)
+        width: 22px
+    @media (max-width: 360px)
+    &:hover svg
+        fill: var(--red)
+
+.favoriteSvg_active svg
+    fill: var(--red)
