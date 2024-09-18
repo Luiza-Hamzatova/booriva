@@ -14,6 +14,7 @@ const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
     if (isFavorite !== true) {
       dispatch(setCardWish([...cardWish, id]));
     } else {
+      dispatch(setCardWish([...cardWish.filter((itemId) => itemId !== id)]));
     }
   };
 
