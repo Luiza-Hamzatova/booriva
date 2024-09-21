@@ -43,27 +43,25 @@ const SearchBar = () => {
       }
     >
       <div className={styles.searchBar}>
-        <link to={"/searchResults"}>
-          <button className={styles.searchBtn} onClick={searchBtnClick}>
-            <Search />
-          </button>
+        <button className={styles.searchBtn} onClick={searchBtnClick}>
+          <Search />
+        </button>
 
-          <input
-            type="text"
-            className={
-              styles.textbox + " " + (isInputActive ? styles.active : "")
-            }
-            ref={InputRef}
-            placeholder="Поиск товаров"
-            value={value}
-            onChange={handleInputChange}
-          />
-          {isInputActive && (
-            <button className={styles.clearBtn} onClick={handleClearClick}>
-              <DeleteBtn />
-            </button>
-          )}
-        </link>
+        <input
+          type="text"
+          className={
+            styles.textbox + " " + (isInputActive ? styles.active : "")
+          }
+          ref={InputRef}
+          placeholder="Поиск товаров"
+          value={value}
+          onChange={handleInputChange}
+        />
+        {isInputActive && (
+          <button className={styles.clearBtn} onClick={handleClearClick}>
+            <DeleteBtn />
+          </button>
+        )}
       </div>
     </form>
   );
