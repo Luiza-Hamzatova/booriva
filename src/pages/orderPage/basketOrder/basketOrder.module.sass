@@ -1,0 +1,99 @@
+
+.basket
+    width: 378px
+    height: 562px
+    @media (max-width:1002px)
+        display: none
+
+.buttonText
+    color: var(--white)
+    font-family: var(--secondary-ff)
+    font-size: 12px
+    position: absolute
+    top: 44%
+    left: 48%
+    transform: translate(-50%, -50%)
+
+    @media (min-width: 1000px)
+        top: 45%
+        left: 46%
+    @media (min-width: 1440px)
+        left: 47%
+
+//стили для заполененной корзины//
+
+.products
+    display: flex
+    flex-direction: column
+    gap: 10px
+    overflow-y: scroll
+    height: 255px
+    margin-bottom: 40px
+    @media (min-width: 480px)
+        height: 400px
+        margin-bottom: 50px
+    @media (min-width: 1000px)
+        height: 300px
+        margin-bottom: 40px
+
+.products::-webkit-scrollbar
+    width: 3px
+    background-color: transparent
+
+.products::-webkit-scrollbar-track
+    border: 1px solid var(--white)
+    background-color: var(--lightpink)
+
+.products::-webkit-scrollbar-thumb
+    background-color: var(--taffy-pink)
+    border-radius: 4px
+
+.orderPrice
+    color: var(--taffy-pink)
+    display: flex
+    justify-content: space-between
+    position: relative
+    overflow: hidden
+    margin-bottom: 30px
+    margin-top: 20px
+    &::after
+        position: absolute
+        content: " ...................................................."
+        left: 120px
+        white-space: nowrap
+        z-index: -1
+    @media (max-width: 1002px)
+        margin-bottom: 0px
+        margin-top: 20px
+        color: black
+
+.pink
+    font-family: Montserrat
+    font-size: 16px
+    font-weight: 400
+    line-height: 19.5px
+    color: #FDA3C4
+    display: flex
+    justify-content: space-between
+    position: relative
+    overflow: hidden
+    &::after
+        position: absolute
+        left: 120px
+        white-space: nowrap
+        z-index: -1
+.price
+    background-color: var(--white)
+    padding-left: 5px
+    font-weight: bold
+
+.basket__Adaption
+    display: none
+    width: 620px
+    @media (max-width: 1002px)
+        display: block
+.title
+    display: none
+    margin-bottom: 15px
+    @media (max-width: 1002px)
+        display: block

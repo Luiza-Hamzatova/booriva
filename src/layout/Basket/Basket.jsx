@@ -78,7 +78,7 @@ const Basket = () => {
                 <b>0 р</b>
               </span>
             </p>
-            <Link to="/">
+            <Link to="/order">
               <Button value={"Оформить заказ"} />
             </Link>
           </div>

@@ -21,7 +21,7 @@ const ProductCard = ({ id, images, name, size, price }) => {
       <div className={styles.productInfo}>
         <h2 className={styles.productName}>{name}</h2>
         <p className={styles.productSize}>{size}</p>
-        <p className={styles.productPrice}>{price};</p>
+        <p className={styles.productPrice}>{price}</p>
       </div>
       <div className={styles.deleteProductBtn} onClick={deleteItemFromCart}>
         <DeleteBtn />
