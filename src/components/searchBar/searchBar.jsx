@@ -4,7 +4,7 @@ import Search from "../../assets/svg/Search";
 import DeleteBtn from "../../assets/svg/DeleteBtn";
 import { isSearchBarOpen } from "../../redux/searchBarSlice/searchBarSlice";
 import styles from "./searchBar.module.sass";
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 
 const SearchBar = () => {
   const [value, setValue] = useState("");
@@ -14,10 +14,12 @@ const SearchBar = () => {
   const isSearchBarOpen = useSelector(
     (state) => state.searchBar.isSearchBarOpen
   );
+
   const handleInputChange = (e) => {
     setValue(e.target.value);
     setIsInputActive(e.target.value !== "");
   };
+
   const handleClearClick = () => {
     setValue("");
     setIsInputActive(false);
@@ -28,6 +30,10 @@ const SearchBar = () => {
     InputRef.current.focus();
   }, [isSearchBarOpen]);
 
+  const searchBtnClick = () => {
+    console.log("Активирована");
+  };
+
   return (
     <form
       className={
@@ -37,24 +43,27 @@ const SearchBar = () => {
       }
     >
       <div className={styles.searchBar}>
-        <button className={styles.searchBtn}>
-          <Search />
-        </button>
-        <input
-          type="text"
-          className={
-            styles.textbox + " " + (isInputActive ? styles.active : "")
-          }
-          ref={InputRef}
-          placeholder="Поиск товаров"
-          value={value}
-          onChange={handleInputChange}
-        />
-        {isInputActive && (
-          <button className={styles.clearBtn} onClick={handleClearClick}>
-            <DeleteBtn />
+        <link to={"/searchResults"}>
+          <button className={styles.searchBtn} onClick={searchBtnClick}>
+            <Search />
           </button>
-        )}
+
+          <input
+            type="text"
+            className={
+              styles.textbox + " " + (isInputActive ? styles.active : "")
+            }
+            ref={InputRef}
+            placeholder="Поиск товаров"
+            value={value}
+            onChange={handleInputChange}
+          />
+          {isInputActive && (
+            <button className={styles.clearBtn} onClick={handleClearClick}>
+              <DeleteBtn />
+            </button>
+          )}
+        </link>
       </div>
     </form>
   );
