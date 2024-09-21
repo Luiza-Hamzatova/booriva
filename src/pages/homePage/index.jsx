@@ -9,11 +9,11 @@ import InfiniteMarquee from "./infiniteMarquee/InfiniteMarquee";
 const HomePage = () => {
   return (
     <div>
-      {/* <NewColection />
+      <NewColection />
       <NewCatalog />
-      <Baner /> */}
+      <Baner />
       <BoorivaStore />
-      {/* <InfiniteMarquee /> */}
+      <InfiniteMarquee />
       <Contact />
     </div>
   );

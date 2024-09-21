@@ -6,19 +6,9 @@ import React, { useState, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCardWish } from "../../redux/wishListSlice/wishListSlice";
 
-const CardProduct = ({ id, price, name, img, isFavoriteItem, type }) => {
+const CardProduct = ({ id, price, name, img, isFavorite, type }) => {
   const dispatch = useDispatch();
-  const [product, setProduct] = useState([]);
-  const isFavorite = useSelector((state) => state.wishlist.isFavorite);
-  const location = useLocation();
-
-  useEffect(() => {
-    const productId = qs.parse(location.search.substring(1)).id;
-
-    fetch(`https://6569c6cede53105b0dd7a33a.mockapi.io/product/${productId}`)
-      .then((res) => res.json())
-      .then((res) => setProduct(res));
-  }, [location]);
+  const cardWish = useSelector((state) => state.wishList.cardWish);
 
   const addProductToCart = () => {
     if (isFavorite !== true) {
