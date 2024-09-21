@@ -1,7 +1,7 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCartBasket } from "../../redux/cart/cartSlice";
+import { setCartBasket } from "../../redux/cartSlice/cartSlice";
 import CloseCartBtn from "../../assets/svg/CloseBtn";
 import CatInTheBag from "../../assets/svg/CatInTheBag";
 import StartShoppingBtnBg from "../../assets/svg/StartShoppingBtnBg";

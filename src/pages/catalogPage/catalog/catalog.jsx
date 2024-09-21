@@ -7,13 +7,14 @@ import Title from "../../../components/title/title";
 import Filter from "../filter/filter";
 
 import styles from "./catalog.module.sass";
+import { useSelector } from "react-redux";
 
 const Catalog = () => {
   const [products, setProducts] = useState([]);
   const [categoryName, setCategoryName] = useState("");
   const [menuName, setMenuName] = useState("");
   const location = useLocation();
-
+  const cardWish = useSelector((state) => state.wishList.cardWish);
   useEffect(() => {
     if (window.location.search) {
       const params = qs.parse(location.search.substring(1));
@@ -63,7 +64,7 @@ const Catalog = () => {
                 key={id}
                 price={price}
                 name={name}
-                isFavorite={false}
+                isFavorite={cardWish.includes(id)}
                 type={"catalog"}
               />
             ))}

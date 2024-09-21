@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import BackToHome from "../../../assets/svg/BackToHome";
 import EmptyWishlistIcon from "../../../assets/svg/EmptyWishlistIcon";
 
-import styles from "./EmptyWishlist.module.sass";
+import styles from "./emptyWishlist2.module.sass";
 
 const EmptyWishlist = () => {
   return (

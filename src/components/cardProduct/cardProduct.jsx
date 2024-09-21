@@ -3,15 +3,13 @@ import FavoriteSvg from "./../../assets/svg/favoriteSvg";
 
 import styles from "./cardProduct.module.sass";
 import React, { useState, useEffect } from "react";
-import { useLocation } from "react-router-dom";
-import qs from "qs";
 import { useDispatch, useSelector } from "react-redux";
-import { setIsFavorite } from "../../redux/wishListSlice/wishListSlice";
+import { setCardWish } from "../../redux/wishListSlice/wishListSlice";
 
 const CardProduct = ({ id, price, name, img, isFavoriteItem, type }) => {
   const dispatch = useDispatch();
   const [product, setProduct] = useState([]);
-  const isFavorite = useSelector((state) => state.wishList.isFavorite);
+  const isFavorite = useSelector((state) => state.wishlist.isFavorite);
   const location = useLocation();
 
   useEffect(() => {
@@ -23,24 +21,15 @@ const CardProduct = ({ id, price, name, img, isFavoriteItem, type }) => {
   }, [location]);
 
   const addProductToCart = () => {
-    const cart = localStorage.getItem("cart")
-      ? JSON.parse(localStorage.getItem("cart"))
-      : [];
-
-    cart.push({
-      isFavoriteItem: isFavoriteItem,
-      cart: product,
-    });
-    localStorage.setItem("cart", JSON.stringify(cart));
+    if (isFavorite !== true) {
+      dispatch(setCardWish([...cardWish, id]));
+    } else {
+      dispatch(setCardWish([...cardWish.filter((itemId) => itemId !== id)]));
+    }
   };
 
-  const isFavoriteClick = () => {
-    addProductToCart();
-    dispatch(setIsFavorite(true));
-  };
   return (
-    <Link
-      to={`/product?id=${id}`}
+    <div
       className={
         styles.cardProduct + (type === "catalog" ? " " + styles.catalog : "")
       }
@@ -50,21 +39,24 @@ const CardProduct = ({ id, price, name, img, isFavoriteItem, type }) => {
           styles.favoriteSvg +
           (isFavorite === true ? " " + styles.favoriteSvg_active : "")
         }
+        onClick={addProductToCart}
       >
-        <FavoriteSvg onclick={isFavoriteClick} />
+        <FavoriteSvg />
       </div>
-      <div className={styles.cardProduct__img}>
-        <img src={img} alt="" />
+      <Link className={styles.link} to={`/product?id=${id}`}>
+        <div className={styles.cardProduct__img}>
+          <img src={img} alt="" />
 
-        <center>
-          <div className={styles.cardProduct_line}></div>
-        </center>
-      </div>
-      <div className={styles.cardProduct__title}>
-        <p className={styles.cardProduct__title_name}>{name} </p>
-        <p className={styles.cardProduct__title_price}>{price}₽</p>
-      </div>
-    </Link>
+          <center>
+            <div className={styles.cardProduct_line}></div>
+          </center>
+        </div>
+        <div className={styles.cardProduct__title}>
+          <p className={styles.cardProduct__title_name}>{name} </p>
+          <p className={styles.cardProduct__title_price}>{price}₽</p>
+        </div>
+      </Link>
+    </div>
   );
 };
 

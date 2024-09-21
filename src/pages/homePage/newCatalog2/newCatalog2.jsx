@@ -5,12 +5,13 @@ import qs from "qs";
 import CardProduct from "../../../components/cardProduct/cardProduct";
 import Title from "../../../components/title/title";
 import Button from "../../../components/button/button";
-import styles from "./newCatalog.module.sass";
+import styles from "./newCatalog2.module.sass";
+import { useSelector } from "react-redux";
 
 const NewCatalog = () => {
   const [products, setProducts] = useState([]);
   const location = useLocation();
-
+  const cardWish = useSelector((state) => state.wishList.cardWish);
   useEffect(() => {
     fetch(`https://65588446e93ca47020a966c9.mockapi.io/menuCatalog?menuId=000`)
       .then((res) => res.json())
@@ -31,7 +32,7 @@ const NewCatalog = () => {
               key={id}
               price={price}
               name={name}
-              isFavorite={false}
+              isFavorite={cardWish.includes(id)}
               type={""}
             />
           ))}
