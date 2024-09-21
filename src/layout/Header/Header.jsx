@@ -24,7 +24,6 @@ const Header = () => {
           <div className={styles.bottomRow}>
             <Menu />
           </div>
-        
         </div>
       </div>
     </header>
