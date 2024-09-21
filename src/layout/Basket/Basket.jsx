@@ -1,11 +1,9 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCartBasket } from "../../redux/cart/cartSlice";
 import CloseCartBtn from "../../assets/svg/CloseBtn";
 import CatInTheBag from "../../assets/svg/CatInTheBag";
 import StartShoppingBtnBg from "../../assets/svg/StartShoppingBtnBg";
-import PlaceAnOrderBtnBg from "../../assets/svg/PlaceAnOrderBtnBg";
 
 import styles from "./Basket.module.sass";
 import ProductCard from "./ProductCard/ProductCard";
@@ -55,7 +53,6 @@ const Basket = () => {
                   name={product?.name}
                   size={size}
                   price={product?.price}
-                  // deleteCart={deleteCart}
                 />
               ))}
             </div>
