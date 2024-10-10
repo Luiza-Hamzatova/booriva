@@ -1,18 +1,14 @@
 import { Link, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { setCartBasket } from "../../../redux/cart/cartSlice";
-import CloseCartBtn from "../../../assets/svg/CloseBtn";
-import CatInTheBag from "../../../assets/svg/CatInTheBag";
-import StartShoppingBtnBg from "../../../assets/svg/StartShoppingBtnBg";
+
 import Title from "../../../components/title/title";
 import styles from "./basketOrder.module.sass";
 import ProductCard from "../../../layout/Basket/ProductCard/ProductCard";
 
 const BasketOrder = () => {
   const cart = useSelector((state) => state.basket.cart);
-  const isBasketOpen = useSelector((state) => state.basket.isBasketOpen);
-  const dispatch = useDispatch();
+
   return (
     <div>
       <div className={styles.basket}>

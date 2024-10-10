@@ -1,6 +1,9 @@
 import styles from "./infoOrder.module.sass";
+import { useDispatch } from "react-redux";
 import { useState } from "react";
 import Button from "../../../components/button/button";
+import { setIsOrderGetOpen } from "../../../redux/orderGetSlice/orderGetSlice";
+
 const InfoOrder = () => {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
@@ -10,6 +13,8 @@ const InfoOrder = () => {
   const [selectedDeliveryMethod, setSelectedDeliveryMethod] = useState(
     "Доставка в отделение почты"
   );
+  const dispatch = useDispatch();
+
   return (
     <div>
       <div className={styles.contactInfo}>
@@ -97,7 +102,10 @@ const InfoOrder = () => {
           ></textarea>
         </form>
       </div>
-      <div className={styles.button}>
+      <div
+        className={styles.button}
+        onClick={() => dispatch(setIsOrderGetOpen(true))}
+      >
         <Button value={"Потвердить заказ"} />
       </div>
     </div>
